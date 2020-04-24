@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - БелэкспЛогистик</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
+    <link href="~/css/site.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     <header>
@@ -21,10 +21,9 @@
                         <li class="nav-item">
                             @if (User.Identity.IsAuthenticated)
                             {
-                                <li allign="right">@User.Identity.Name</li>
-
+                                <li>@User.Identity.Name &nbsp;&nbsp;&nbsp;</li>
                                 <form method="post" asp-controller="Account" asp-action="Logout">
-                                    <input type="submit" value="Выход" />
+                                    <input class="exitBut" type="submit" value="Выход" />
                                 </form>
                             }
                             else
