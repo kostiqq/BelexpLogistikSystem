@@ -12,16 +12,28 @@
         if (User.IsInRole("admin"))
         {
             <div class="widget">
-            <h3>Категории</h3>
-            <ul>
-                    <li class="color"><a href="" id="button1">Список пользователей</a></li>
-                <li class="color" id="but2"><a href="" id="button2" class="buttonText">Управление ролями</a></li>
-            </ul>
+                <h3>Выберите действие</h3>
+                <ul>
+                    <li class="color"><a asp-controller="Users" asp-action="Index" id="button1">Управление пользователями</a></li>
+                    <li class="color" ><a asp-controller="Roles" asp-action="Index" id="button2" class="buttonText">Управление ролями</a></li>
+                </ul>
+            </div>
+        }
+        if (User.IsInRole("logistician"))
+        {
+            <div class="widget widget2">
+                <h3>Меню</h3>
+                <ul>
+                    <li class="color"><a asp-controller="Driver" asp-action="Index" id="button1">Список водителей</a></li>
+                    <li class="color" id="but2"><a asp-controller="Order" asp-action="Index"  id="button2" class="buttonText">Заказы</a></li>
+                    <li class="color"><a asp-controller="Invoice" asp-action="Index" id="button1">Накладные</a></li>
+                    <li class="color" id="but2"><a asp-controller="Waybill" asp-action="Index" id="button2" class="buttonText">Путевые листы</a></li>
+                </ul>
             </div>
         }
         else
         {
-            <h4>нихаааай</h4>
+            
         }
     }
     else

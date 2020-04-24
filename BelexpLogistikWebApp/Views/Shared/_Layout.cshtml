@@ -18,19 +18,26 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            @if (User.Identity.IsAuthenticated)
-                            {
-                                <li>@User.Identity.Name &nbsp;&nbsp;&nbsp;</li>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li>@User.Identity.Name &nbsp;&nbsp;&nbsp;</li>
+                            <li>
                                 <form method="post" asp-controller="Account" asp-action="Logout">
                                     <input class="exitBut" type="submit" value="Выход" />
                                 </form>
-                            }
-                            else
-                            {
-                            <a asp-controller="Account" asp-action="Login">Вход</a>
-                            }
-                        </li>
+                            </li>
+                        }
+                        else
+                        {
+                            <li>
+                                <form method="post" asp-controller="Account" asp-action="Login">
+                                    <input class="exitBut" type="submit" value="Войти" />
+                                </form>
+                            </li>
+                        }
+                        @*<li class="nav-item">
+
+                        </li>*@
                     </ul>
                 </div>
             </div>

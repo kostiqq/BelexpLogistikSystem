@@ -20,8 +20,8 @@ namespace BelexpLogistickSystem.Views
 
             menuItems = new List<HomeMenuItem>
             {
-                new HomeMenuItem {Id = MenuItemType.Browse, Title="Browse" },
-                new HomeMenuItem {Id = MenuItemType.About, Title="About" }
+                new HomeMenuItem {Id = MenuItemType.RideList, Title="Список поездок" },
+                new HomeMenuItem {Id = MenuItemType.OrderList, Title="Список заказов" }
             };
 
             ListViewMenu.ItemsSource = menuItems;

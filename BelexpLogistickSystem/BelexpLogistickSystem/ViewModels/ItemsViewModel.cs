@@ -17,7 +17,7 @@ namespace BelexpLogistickSystem.ViewModels
 
         public ItemsViewModel()
         {
-            Title = "Browse";
+            Title = "Список поездок";
             Items = new ObservableCollection<Item>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 

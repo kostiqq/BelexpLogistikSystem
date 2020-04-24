@@ -6,8 +6,8 @@ namespace BelexpLogistickSystem.Models
 {
     public enum MenuItemType
     {
-        Browse,
-        About
+        RideList,
+        OrderList
     }
     public class HomeMenuItem
     {

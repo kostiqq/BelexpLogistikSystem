@@ -5,7 +5,7 @@ namespace BelexpLogistikWebApp.Models
     public class LoginViewModel
     {
         [Required]
-        [Display(Name = "Email")]
+        [Display(Name = "Имя пользователя")]
         public string Email { get; set; }
 
         [Required]

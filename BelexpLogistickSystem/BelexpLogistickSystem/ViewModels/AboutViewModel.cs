@@ -9,7 +9,7 @@ namespace BelexpLogistickSystem.ViewModels
     {
         public AboutViewModel()
         {
-            Title = "About";
+            Title = "Список заказов";
             OpenWebCommand = new Command(async () => await Browser.OpenAsync("https://xamarin.com"));
         }
 
