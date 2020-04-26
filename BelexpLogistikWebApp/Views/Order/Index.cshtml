@@ -24,21 +24,29 @@
                     Номер заказа
                 </th>
                 <th>
-                    Краткая информация
+                    Заказчик
+                </th>
+                <th>
+                    Город назначения
                 </th>
             </tr>
-            @*@foreach (var orders in Model)
-            {
-                <tr>
-                    <td>
-                        @orders.CostumerId
-                    </td>
-                    <td>
-                        @orders.OtherInfo
-                    </td>
-                </tr>
-            }*@
-            </table>
+
+            <tr>
+                <td rowspan="2">
+                    56473
+                </td>
+                <td>
+                    hgjfjfgn,f fjk
+                </td>
+                <td>
+                    Gjdjt
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">info<a asp-controller="Order" asp-action="Info">...</a></td>
+            </tr>
+
+        </table>
         <table class="table informationOrdersEnd">
             <tr>
                 <th>
@@ -49,14 +57,19 @@
                 </th>
             </tr>
             <tr>
-                <td>
-                    2222222
+                <td rowspan="2">
+                    35473
                 </td>
                 <td>
-                    ghjfkdsk fjsj jfgnn rjkrl fbdnskk Зак!!
+                    nbvcxdfhn,f fjk
                 </td>
+                <td>
+                    sghfg
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">information<a asp-controller="Order" asp-action="InfoEnd">...</a></td>
             </tr>
         </table>
     </div>
 </body>
-

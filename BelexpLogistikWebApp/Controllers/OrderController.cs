@@ -8,9 +8,18 @@ namespace BelexpLogistikWebApp.Controllers
 {
     public class OrderController : Controller
     {
+
         public IActionResult Index()
         {
             return View("Index");
+        }
+        public IActionResult Info()
+        {
+            return View("Info");
+        }
+        public IActionResult InfoEnd()
+        {
+            return View("InfoEnd");
         }
     }
 }

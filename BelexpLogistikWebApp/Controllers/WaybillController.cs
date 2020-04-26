@@ -12,5 +12,9 @@ namespace BelexpLogistikWebApp.Controllers
         {
             return View("Index");
         }
+        public IActionResult CreateList()
+        {
+            return View();
+        }
     }
 }

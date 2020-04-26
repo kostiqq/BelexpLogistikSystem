@@ -1,0 +1,123 @@
+﻿<head>
+    <meta charset="utf-8">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="~/css/adminmainpage.css" rel="stylesheet" type="text/css">
+    <link href="~/css/site.css" rel="stylesheet" type="text/css">
+    <script src="~/js/site.js"></script>
+
+
+</head>
+
+<body>
+    <h3>
+        Заполнение и печать путевого листа грузового автомобиля
+    </h3>
+    <table class="tableCreate">
+        <tr>
+            <td>
+                <form>
+                    <div class="group">
+                        <input type="date" value="" class="inpCreateList" data-position="right top" required />
+                        <span class="bar"></span>
+                        <label class="labelCrList dispNone">Дата начала ездки</label>
+                    </div>
+                </form>
+            </td>
+            <td>
+                <form>
+                    <div class="group">
+                        <input class="inpCreateList" type="date" id="datepicker" required />
+                        <span class="bar"></span>
+                        <label class="labelCrList dispNone">Дата окончания срока действия</label>
+                    </div>
+                </form>
+            </td>
+          
+        </tr>
+        <tr>
+            <td>
+                <form>
+                    <div class="group">
+                        <input class="inpCreateList" type="text" required />
+                        <span class="bar"></span>
+                        <label class="labelCrList">ФИО водитея</label>
+                    </div>
+                </form>
+            </td>
+            <td>
+                <form>
+                    <div class="group">
+                        <input class="inpCreateList" type="text" required />
+                        <span class="bar"></span>
+                        <label class="labelCrList">Номер вод. удостоверения</label>
+                    </div>
+                </form>
+            </td>
+            <td rowspan="2">
+                <input class="CreateListBut" type="button" value="Распечатать путевой лист" /><br>
+                <input class="CreateListBut" type="button" value="Сохранить путевой лист" /><br>
+                <input class="CreateListBut" type="button" value="Назад к журналу" />
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="group">
+                    <input class="inpCreateList" type="text" required />
+                    <span class="bar"></span>
+                    <label class="labelCrList">Гос. номер авто</label>
+                </div>
+            </td>
+            <td>
+                <form>
+                    <div class="group">
+                        <input class="inpCreateList" type="text" required />
+                        <span class="bar"></span>
+                        <label class="labelCrList">Гос. номер прицепа</label>
+                    </div>
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <form>
+                    <div class="group">
+                        <input class="inpCreateList" type="text" required />
+                        <span class="bar"></span>
+                        <label class="labelCrList">Марка автомобиля</label>
+                    </div>
+                </form>
+            </td>
+            <td>
+                <form>
+                    <div class="group">
+                        <input class="inpCreateList" type="text" required />
+                        <span class="bar"></span>
+                        <label class="labelCrList">Марка прицепа, полуприцепа</label>
+                    </div>
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <form>
+                    <div class="group">
+                        <input class="inpCreateList" type="text" required />
+                        <span class="bar"></span>
+                        <label class="labelCrList">Серия путевого листа</label>
+                    </div>
+                </form>
+            </td>
+            <td>
+                <form>
+                    <div class="group">
+                        <input class="inpCreateList" type="number" required />
+                        <span class="bar"></span>
+                        <label class="labelCrList">Номер путевого листа</label>
+                    </div>
+                </form>
+            </td>
+        </tr>
+    </table>
+</body>
