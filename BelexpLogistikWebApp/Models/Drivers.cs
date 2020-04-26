@@ -16,7 +16,8 @@ namespace BelexpLogistikWebApp
         public string DriverName { get; set; }
         public string DriverPatronymic { get; set; }
         public DateTime? Birthday { get; set; }
-        public int? DriverCardId { get; set; }
+        public string DriverCardId { get; set; }
+        public bool IsFree { get; set; }
         public DateTime? LastMedicalInspection { get; set; }
         public int IdentificationNumber { get; set; }
 

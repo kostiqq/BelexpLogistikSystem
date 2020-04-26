@@ -7,7 +7,7 @@ namespace BelexpLogistikWebApp
     {
         public Ride()
         {
-            FuelForRide = new HashSet<FuelForRide>();
+           
         }
 
         public int Id { get; set; }
@@ -20,6 +20,5 @@ namespace BelexpLogistikWebApp
         public virtual Cars Car { get; set; }
         public virtual Drivers Driver { get; set; }
         public virtual Orders Order { get; set; }
-        public virtual ICollection<FuelForRide> FuelForRide { get; set; }
     }
 }

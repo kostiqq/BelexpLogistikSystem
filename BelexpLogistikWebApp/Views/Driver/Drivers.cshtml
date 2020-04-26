@@ -1,4 +1,6 @@
-﻿@model IEnumerable<BelexpLogistikWebApp.Models.User>
+﻿@model IEnumerable<Drivers>
+
+
 @{
     ViewData["Title"] = "Drivers";
 }
@@ -13,6 +15,8 @@
     <div>
         <h3>Список водителей</h3>
         <table class="table tableDr">
+
+            @*@foreach (var drive in Model)*@
             <tr>
                 <th>
                     ФИО
@@ -21,49 +25,30 @@
                     Номер прав
                 </th>
             </tr>
-            <tr>
-                <td>
-                    Иванов Иван Иванович
-                </td>
-                <td>
-                    87654967
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Иванов Иван Иванович
-                </td>
-                <td>
-                    87654967
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Иванов Иван Иванович
-                </td>
-                <td>
-                    87654967
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Иванов Иван Иванович
-                </td>
-                <td>
-                    87654967
-                </td>
-            </tr>
-            
+            @foreach (var drive in Model)
+            {
+                <tr>
+                    <td>
+                        @drive.DriverName @drive.DriverSurname @drive.DriverPatronymic
+                    </td>
+                    <td>
+                        @drive.DriverCardId
+                    </td>
+                </tr>
+            }
         </table>
-        <table  class="table visibleHidDrivers">
-            <tr>
-                <td>
-                    Иванов Иван Иванович
-                </td>
-                <td>
-                    87654967
-                </td>
-            </tr>
+        <table class="table visibleHidDrivers">
+            @foreach (var drive in Model)
+            {
+                <tr>
+                    <td>
+                        @drive.DriverName @drive.DriverSurname @drive.DriverPatronymic
+                    </td>
+                    <td>
+                        @drive.DriverCardId
+                    </td>
+                </tr>
+            }
         </table>
         <input type="button" class="aPositionLeft" onclick="ViewAllDrivers()" value="Показать всех" />
         <input type="button" class="aPositionRight" onclick="ViewNotAllDrivers()" value="Свернуть" />
@@ -80,16 +65,19 @@
                     Номер прав
                 </th>
             </tr>
-            <tr>
-                <td>
-                    Иванов Иван Иванович
-                </td>
-                <td>
-                    87654967
-                </td>
-            </tr>
-        </table>
-        <table  class="table visibleHidDrivers2">
+            @foreach (var drive in Model)
+             {
+                <tr>
+                    <td>
+                        Иванов Иван Иванович
+                    </td>
+                    <td>
+                        87654967
+                    </td>
+                </tr>
+             }
+            </table>
+        <table class="table visibleHidDrivers2">
             <tr>
                 <td>
                     Иванов Иван Иванович

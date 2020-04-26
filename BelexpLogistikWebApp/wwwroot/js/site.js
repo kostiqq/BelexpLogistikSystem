@@ -17,7 +17,7 @@ function ButtClickOrdersEnd() {
 }
 function ViewAllDrivers()
 {
-    document.getElementsByClassName('visibleHidDrivers')[0].style = "display: table; width: 100%";
+    document.getElementsByClassName('visibleHidDrivers')[0].style = "display: table";
     document.getElementsByClassName('aPositionLeft')[0].style = "display: none";
     document.getElementsByClassName('aPositionRight')[0].style = "display: block";
 }
@@ -29,7 +29,7 @@ function ViewNotAllDrivers() {
 }
 
 function ViewAllDrivers2() {
-    document.getElementsByClassName('visibleHidDrivers2')[0].style = "display: table; width: 100%";
+    document.getElementsByClassName('visibleHidDrivers2')[0].style = "display: table";
     document.getElementsByClassName('aPositionLeft2')[0].style = "display: none";
     document.getElementsByClassName('aPositionRight2')[0].style = "display: block";
 }

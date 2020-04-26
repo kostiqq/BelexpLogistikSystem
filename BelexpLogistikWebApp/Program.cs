@@ -23,6 +23,7 @@ namespace BelexpLogistikWebApp
                 {
                     var userManager = services.GetRequiredService<UserManager<User>>();
                     var rolesManager = services.GetRequiredService<RoleManager<IdentityRole>>();
+                    var context = services.GetRequiredService<BelexpLogistikContext>();
                     await RoleInitializer.InitializeAsync(userManager, rolesManager);
                 }
                 catch (Exception ex)

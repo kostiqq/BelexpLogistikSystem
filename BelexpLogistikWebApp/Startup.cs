@@ -28,6 +28,8 @@ namespace BelexpLogistikWebApp
         {
             services.AddDbContext<ApplicationContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("UserDBConnection")));
+            services.AddDbContext<BelexpLogistikContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("MainDBConnection")));
 
             services.AddIdentity<User, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationContext>();

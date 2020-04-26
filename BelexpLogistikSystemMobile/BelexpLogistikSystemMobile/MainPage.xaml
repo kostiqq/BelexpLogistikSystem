@@ -11,8 +11,10 @@
         
         <Label Text="Для начала работы необходимо пройти авторизацию" 
            HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-        <Button Text="Войти" 
+           
+           VerticalOptions="CenterAndExpand" FontAttributes="Italic" FontSize="Title" />
+        <Button Text="Войти"
+                
                 Margin="Center"/>
     </StackLayout>
 

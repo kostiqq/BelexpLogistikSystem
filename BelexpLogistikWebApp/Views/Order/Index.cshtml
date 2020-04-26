@@ -1,4 +1,5 @@
-﻿
+﻿@model IEnumerable<Orders>
+
 @{
     ViewData["Title"] = "Index";
 }
@@ -26,15 +27,18 @@
                     Краткая информация
                 </th>
             </tr>
-            <tr>
-                <td>
-                    1111111
-                </td>
-                <td>
-                    ghjfkdsk fjsj jfgnn rjkrl fbdnskk не зак
-                </td>
-            </tr>
-        </table>
+            @*@foreach (var orders in Model)
+            {
+                <tr>
+                    <td>
+                        @orders.CostumerId
+                    </td>
+                    <td>
+                        @orders.OtherInfo
+                    </td>
+                </tr>
+            }*@
+            </table>
         <table class="table informationOrdersEnd">
             <tr>
                 <th>

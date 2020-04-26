@@ -21,7 +21,6 @@ namespace BelexpLogistikWebApp
         public virtual DbSet<Costumers> Costumers { get; set; }
         public virtual DbSet<Country> Country { get; set; }
         public virtual DbSet<Drivers> Drivers { get; set; }
-        public virtual DbSet<FuelForRide> FuelForRide { get; set; }
         public virtual DbSet<Goods> Goods { get; set; }
         public virtual DbSet<Orders> Orders { get; set; }
         public virtual DbSet<Ride> Ride { get; set; }
@@ -141,25 +140,6 @@ namespace BelexpLogistikWebApp
                     .HasMaxLength(20);
 
                 entity.Property(e => e.LastMedicalInspection).HasColumnType("date");
-            });
-
-            modelBuilder.Entity<FuelForRide>(entity =>
-            {
-                entity.Property(e => e.Id)
-                    .HasColumnName("ID")
-                    .ValueGeneratedNever();
-
-                entity.Property(e => e.FuelingId).HasColumnName("FuelingID");
-
-                entity.Property(e => e.RideId).HasColumnName("RideID");
-
-                entity.Property(e => e.WayBillId).HasColumnName("WayBillID");
-
-                entity.HasOne(d => d.Ride)
-                    .WithMany(p => p.FuelForRide)
-                    .HasForeignKey(d => d.RideId)
-                    .OnDelete(DeleteBehavior.Cascade)
-                    .HasConstraintName("FK_FuelForRide_Ride");
             });
 
             modelBuilder.Entity<Goods>(entity =>
