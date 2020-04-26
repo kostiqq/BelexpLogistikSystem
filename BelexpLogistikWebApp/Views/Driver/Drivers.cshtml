@@ -1,7 +1,106 @@
-﻿
+﻿@model IEnumerable<BelexpLogistikWebApp.Models.User>
 @{
     ViewData["Title"] = "Drivers";
 }
 
-<h1>Drivers</h1>
+<meta charset="utf-8">
+<link href='http://fonts.googleapis.com/css?family=Roboto:700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<link href="~/css/adminmainpage.css" rel="stylesheet" type="text/css">
+<link href="~/css/site.css" rel="stylesheet" type="text/css">
+<script src="~/js/site.js"></script>
+<body>
+    <div>
+        <h3>Список водителей</h3>
+        <table class="table tableDr">
+            <tr>
+                <th>
+                    ФИО
+                </th>
+                <th>
+                    Номер прав
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    Иванов Иван Иванович
+                </td>
+                <td>
+                    87654967
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Иванов Иван Иванович
+                </td>
+                <td>
+                    87654967
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Иванов Иван Иванович
+                </td>
+                <td>
+                    87654967
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Иванов Иван Иванович
+                </td>
+                <td>
+                    87654967
+                </td>
+            </tr>
+            
+        </table>
+        <table  class="table visibleHidDrivers">
+            <tr>
+                <td>
+                    Иванов Иван Иванович
+                </td>
+                <td>
+                    87654967
+                </td>
+            </tr>
+        </table>
+        <input type="button" class="aPositionLeft" onclick="ViewAllDrivers()" value="Показать всех" />
+        <input type="button" class="aPositionRight" onclick="ViewNotAllDrivers()" value="Свернуть" />
 
+    </div>
+    <div class="freeDriversDiv">
+        <h3>Свободные водители</h3>
+        <table class="table tableDrive">
+            <tr>
+                <th>
+                    ФИО
+                </th>
+                <th>
+                    Номер прав
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    Иванов Иван Иванович
+                </td>
+                <td>
+                    87654967
+                </td>
+            </tr>
+        </table>
+        <table  class="table visibleHidDrivers2">
+            <tr>
+                <td>
+                    Иванов Иван Иванович
+                </td>
+                <td>
+                    87654967
+                </td>
+            </tr>
+        </table>
+        <input type="button" class="aPositionLeft2" onclick="ViewAllDrivers2()" value="Показать всех" />
+        <input type="button" class="aPositionRight2" onclick="ViewNotAllDrivers2()" value="Свернуть" />
+
+    </div>
+</body>

@@ -2,6 +2,57 @@
 @{
     ViewData["Title"] = "Index";
 }
+<script src="~/js/site.js"></script>
+<body>
+    <h3>Заказы</h3>
+    <div>
+        <table class="tableBut">
+            <tr>
+                <th>
+                    <input class="inputOrderNotEnd" type="button" value="В обработке" onclick="ButtClickOrdersNotEnd()" />
+                </th>
+                <th>
+                    <input class="inputOrderEnd" type="button" value="Выполненные заказы" onclick="ButtClickOrdersEnd()" />
 
-<h1>ORDERS</h1>
+                </th>
+            </tr>
+        </table>
+        <table class="table informationOrdersNotEnd">
+            <tr>
+                <th>
+                    Номер заказа
+                </th>
+                <th>
+                    Краткая информация
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    1111111
+                </td>
+                <td>
+                    ghjfkdsk fjsj jfgnn rjkrl fbdnskk не зак
+                </td>
+            </tr>
+        </table>
+        <table class="table informationOrdersEnd">
+            <tr>
+                <th>
+                    Номер заказа
+                </th>
+                <th>
+                    Краткая информация
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    2222222
+                </td>
+                <td>
+                    ghjfkdsk fjsj jfgnn rjkrl fbdnskk Зак!!
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
 

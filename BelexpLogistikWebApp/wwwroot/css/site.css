@@ -109,3 +109,55 @@ body {
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
 }
+.aPositionLeft, .aPositionRight, .aPositionLeft2, .aPositionRight2 {
+    margin-left: 1%;
+    border: none;
+    outline: none;
+    background: none;
+    color: blue;
+}
+.aPositionRight, .aPositionRight2{
+    display: none;
+}
+    .aPositionLeft:hover {
+        text-decoration-line: underline;
+    }
+.freeDriversDiv{
+    margin-top: 15px;
+}
+.tableBut{
+    width:100%;
+}
+.tableBut th{
+    width: 50%;
+}
+.inputOrderEnd, .inputOrderNotEnd {
+    width: 100%;
+    border: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: large;
+    font-weight: 600;
+    border-radius: 5px;
+    background: #f0f0f5;
+}
+.inputOrderEnd:hover, .inputOrderNotEnd:hover {
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+.inputOrderNotEnd {
+    background: white;
+}
+
+.informationOrdersEnd{
+    display: none;
+}
+tr .informationOrdersNotEnd, tr .informationOrdersEnd {
+    width: 100%;
+}
+.visibleHidDrivers, .visibleHidDrivers2 {
+    display: none;
+    width: 100%;
+}
+.visibleHidDrivers td, .visibleHidDrivers2 td {
+    width: 63%;
+}
