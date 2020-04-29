@@ -15,6 +15,7 @@ namespace BelexpLogistikWebApp
         public int GoodsId { get; set; }
         public int? DepartureCity { get; set; }
         public string OtherInfo { get; set; }
+        public bool IsComplete { get; set; }
 
         public virtual Costumers Costumer { get; set; }
         public virtual Cities DepartureCityNavigation { get; set; }
