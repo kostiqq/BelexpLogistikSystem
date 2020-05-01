@@ -5,6 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Views\Order\InformationOrder.cshtml" />
+    <Content Remove="Views\_ViewImports - Копировать.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Bower" Version="1.3.11" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.3" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.3">
       <PrivateAssets>all</PrivateAssets>
@@ -16,6 +22,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.2" />
+    <PackageReference Include="Npm" Version="3.5.2" />
   </ItemGroup>
 
 </Project>

@@ -1,0 +1,37 @@
+﻿@model string
+
+<div asp-validation-summary="All"></div>
+
+<form asp-action="Info" method="post">
+    <div>
+        <table class="table">
+            <tr>
+                <th>Заказчик:</th>
+                <td>fjkvkr</td>
+            </tr>
+            <tr>
+                <th>Город назначения:</th>
+                <td>bndfskj ej</td>
+            </tr>
+            <tr>
+                <th rowspan="2">Груз:</th>
+                <td>gjkfdl ejwr</td>
+            </tr>
+            <tr>
+                <td>jgfr rjkerjerekst jrkefnktgn rjngknkre rjenoegnkjr rjgnkfnr rnfejk</td>
+            </tr>
+            <tr>
+                <th>Пожелания к заказу:</th>
+                <td>
+                    jgfk ferwgtnktrngntfg jkwrgtntrkjn rjkefkrt k rnrkrntf
+                </td>
+            </tr>
+
+        </table>
+    </div>
+    <div class="orderHiddenButt">
+        <button type="submit" class="btn btn-primary">Создать накладную</button>
+        <button type="submit" class="btn btn-primary">Создать путевой лист</button>
+    </div>
+  
+</form>
