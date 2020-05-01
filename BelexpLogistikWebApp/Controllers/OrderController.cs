@@ -9,14 +9,21 @@ namespace BelexpLogistikWebApp.Controllers
 {
     public class OrderController : Controller
     {
+        BelexpLogistikContext db;
+        public OrderController(BelexpLogistikContext context)
+        {
+            db = context;
+        }
         public IActionResult Index()
         {
-            var orders = db.Orders.Include(p => p.Costumer).Include(p => p.Goods).Include(p => p.Ride);
-            return View();
+            var orders = db.Orders.Include(p => p.Costumer).Include(p => p.Goods).Include(p => p.Ride).Include(p => p.DepartureCityNavigation);
+            return View(orders);
         }
-        public IActionResult Info()
+        public IActionResult Info(int? id)
         {
-            return View("Info");
+            var orders = db.Orders.Include(p => p.Costumer).Include(p => p.Goods).Include(p => p.Ride).Include(p => p.DepartureCityNavigation);
+            var order = orders.Where(p => p.Id == id).FirstOrDefault(p => p.Id == id);
+            return View(order);
         }
         public IActionResult InfoEnd()
         {
