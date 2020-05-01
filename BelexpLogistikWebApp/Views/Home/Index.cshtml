@@ -9,7 +9,7 @@
 <body>
     @if (User.Identity.IsAuthenticated)
     {
-        if (User.IsInRole("admin"))
+        if (User.IsInRole("Администратор"))
         {
             <div class="widget">
                 <h3>Выберите действие</h3>
@@ -19,7 +19,7 @@
                 </ul>
             </div>
         }
-        if (User.IsInRole("logistician"))
+        if (User.IsInRole("Логист"))
         {
             <div class="widget widget2">
                 <h3>Меню</h3>

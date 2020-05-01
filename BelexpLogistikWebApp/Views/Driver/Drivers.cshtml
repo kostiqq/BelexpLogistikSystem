@@ -15,7 +15,6 @@
     <div>
         <h3>Список водителей</h3>
         <table class="table tableDr">
-            @*@foreach (var drive in Model)*@
             <tr>
                 <th>
                     ФИО
@@ -36,7 +35,7 @@
                 </tr>
             }
         </table>
-        <table class="table visibleHidDrivers">
+        @*<table class="table visibleHidDrivers">
             @foreach (var drive in Model)
             {
                 <tr>
@@ -48,9 +47,9 @@
                     </td>
                 </tr>
             }
-        </table>
-        <input type="button" class="aPositionLeft" onclick="ViewAllDrivers()" value="Показать всех" />
-        <input type="button" class="aPositionRight" onclick="ViewNotAllDrivers()" value="Свернуть" />
+        </table>*@
+        @*<input type="button" class="aPositionLeft" onclick="ViewAllDrivers()" value="Показать всех" />
+        <input type="button" class="aPositionRight" onclick="ViewNotAllDrivers()" value="Свернуть" />*@
 
     </div>
     <div class="freeDriversDiv">
@@ -64,19 +63,19 @@
                     Номер прав
                 </th>
             </tr>
-            @foreach (var drive in Model)
+            @foreach (var drive in Model.Where(p => p.IsFree == true))
              {
                 <tr>
                     <td>
-                        Иванов Иван Иванович
+                        @drive.DriverName @drive.DriverSurname @drive.DriverPatronymic
                     </td>
                     <td>
-                        87654967
+                        @drive.DriverCardId
                     </td>
                 </tr>
              }
             </table>
-        <table class="table visibleHidDrivers2">
+        @*<table class="table visibleHidDrivers2">
             <tr>
                 <td>
                     Иванов Иван Иванович
@@ -85,9 +84,9 @@
                     87654967
                 </td>
             </tr>
-        </table>
-        <input type="button" class="aPositionLeft2" onclick="ViewAllDrivers2()" value="Показать всех" />
-        <input type="button" class="aPositionRight2" onclick="ViewNotAllDrivers2()" value="Свернуть" />
+        </table>*@
+        @*<input type="button" class="aPositionLeft2" onclick="ViewAllDrivers2()" value="Показать всех" />
+        <input type="button" class="aPositionRight2" onclick="ViewNotAllDrivers2()" value="Свернуть" />*@
 
     </div>
 </body>

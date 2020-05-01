@@ -20,7 +20,7 @@
                     <ul class="navbar-nav flex-grow-1">
                         @if (User.Identity.IsAuthenticated)
                         {
-                            <li>@User.Identity.Name &nbsp;&nbsp;&nbsp;</li>
+                            @*<li>@User.Identity.Name &nbsp;&nbsp;&nbsp;</li>*@
                             <li>
                                 <form method="post" asp-controller="Account" asp-action="Logout">
                                     <input class="exitBut" type="submit" value="Выход" />

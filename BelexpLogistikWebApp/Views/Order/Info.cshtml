@@ -1,29 +1,31 @@
-﻿@model string
-
+﻿@model BelexpLogistikWebApp.Orders
+@{ 
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
 <div asp-validation-summary="All"></div>
-
-<form asp-action="Info" method="post">
+@*<form asp-action="Info" method="post">*@
+    <h2>Заказ №@Model.Id</h2>
     <div>
         <table class="table">
             <tr>
                 <th>Заказчик:</th>
-                <td>fjkvkr</td>
+                <td>@Html.DisplayFor(model => model.Costumer.CostumerName)</td>
             </tr>
             <tr>
                 <th>Город назначения:</th>
-                <td>bndfskj ej</td>
+                <td></td>
             </tr>
             <tr>
                 <th rowspan="2">Груз:</th>
-                <td>gjkfdl ejwr</td>
+                <td></td>
             </tr>
             <tr>
-                <td>jgfr rjkerjerekst jrkefnktgn rjngknkre rjenoegnkjr rjgnkfnr rnfejk</td>
+                <td>Вес груза:  тонн</td>
             </tr>
             <tr>
                 <th>Пожелания к заказу:</th>
                 <td>
-                    jgfk ferwgtnktrngntfg jkwrgtntrkjn rjkefkrt k rnrkrntf
+                    
                 </td>
             </tr>
 
@@ -33,5 +35,4 @@
         <button type="submit" class="btn btn-primary">Создать накладную</button>
         <button type="submit" class="btn btn-primary">Создать путевой лист</button>
     </div>
-  
-</form>
+@*</form>*@

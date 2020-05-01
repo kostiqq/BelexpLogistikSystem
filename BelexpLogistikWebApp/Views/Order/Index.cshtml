@@ -30,22 +30,23 @@
                     Город назначения
                 </th>
             </tr>
-
+            @foreach(var order in Model.Where(p => p.IsComplete == false)) 
+            { 
             <tr>
                 <td rowspan="2">
-                    56473
+                    @order.Id
                 </td>
                 <td>
-                    hgjfjfgn,f fjk
+                    @order.Costumer.CostumerName
                 </td>
                 <td>
-                    Gjdjt
+                    @order.DepartureCityNavigation.CityName
                 </td>
             </tr>
             <tr>
-                <td colspan="2">info<a asp-controller="Order" asp-action="Info">...</a></td>
+                <td colspan="2">@Html.ActionLink("Полная информация...", "Info", new { id = order.Id }, null)</td>
             </tr>
-
+            }
         </table>
         <table class="table informationOrdersEnd">
             <tr>
@@ -53,23 +54,29 @@
                     Номер заказа
                 </th>
                 <th>
-                    Краткая информация
+                    Заказчик
+                </th>
+                <th>
+                    Город назначения
                 </th>
             </tr>
-            <tr>
-                <td rowspan="2">
-                    35473
-                </td>
-                <td>
-                    nbvcxdfhn,f fjk
-                </td>
-                <td>
-                    sghfg
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2">information<a asp-controller="Order" asp-action="InfoEnd">...</a></td>
-            </tr>
+            @foreach (var order in Model.Where(p => p.IsComplete == true))
+            {
+                <tr>
+                    <td rowspan="2">
+                        @order.Id
+                    </td>
+                    <td>
+                         @order.Costumer.CostumerName
+                    </td>
+                    <td>
+                        @order.DepartureCityNavigation.CityName
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2"><a asp-controller="Order" asp-action="InfoEnd">Полная информация...</a></td>
+                </tr>
+            }
         </table>
     </div>
 </body>
