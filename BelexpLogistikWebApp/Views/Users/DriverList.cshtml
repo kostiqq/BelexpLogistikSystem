@@ -1,0 +1,70 @@
+﻿@model IEnumerable<BelexpLogistikWebApp.Drivers>
+
+@{
+    ViewData["Title"] = "DriverList";
+}
+
+<h1>Список водителей</h1>
+
+<p>
+    <a asp-action="CreateDriver">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Фамилия
+            </th>
+            <th>
+                Имя
+            </th>
+            <th>
+                Отчество
+            </th>
+            <th>
+                Дата рождения
+            </th>
+            <th>
+                Водительское удостоверение
+            </th>
+            <th>
+                Дата последнего медосмотра
+            </th>
+            <th>
+                Идентификационный номер
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DriverSurname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DriverName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DriverPatronymic)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Birthday)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DriverCardId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastMedicalInspection)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdentificationNumber)
+            </td>
+            <td>
+                <a asp-action="EditDriver" asp-route-id="@item.Id">Изменить информацию о водителе</a> |
+                <a asp-action="DeleteDriver" asp-route-id="@item.Id">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

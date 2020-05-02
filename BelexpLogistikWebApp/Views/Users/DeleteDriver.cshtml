@@ -1,0 +1,62 @@
+﻿@model BelexpLogistikWebApp.Drivers
+
+@{
+    ViewData["Title"] = "DeleteDriver";
+}
+
+<h1>DeleteDriver</h1>
+
+<h3>Водитель №@Model.Id </h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Фамилия
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DriverSurname)
+        </dd>
+        <dt class = "col-sm-2">
+            Имя
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DriverName)
+        </dd>
+        <dt class = "col-sm-2">
+            Отчество
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DriverPatronymic)
+        </dd>
+        <dt class = "col-sm-2">
+            Дата рождения
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Birthday)
+        </dd>
+        <dt class = "col-sm-2">
+            Номер прав
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DriverCardId)
+        </dd>
+        <dt class = "col-sm-2">
+            Дата последнего медосмотра
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LastMedicalInspection)
+        </dd>
+        <dt class = "col-sm-2">
+            Идентификационный номер
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IdentificationNumber)
+        </dd>
+    </dl>
+    
+    <form asp-action="DeleteDriver">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Удалить" class="btn btn-danger" /> |
+        <a asp-action="Index">Назад</a>
+    </form>
+</div>

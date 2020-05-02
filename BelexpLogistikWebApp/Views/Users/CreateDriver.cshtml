@@ -1,0 +1,58 @@
+﻿@model BelexpLogistikWebApp.Drivers
+
+@{
+    ViewData["Title"] = "CreateDriver";
+}
+
+<h1>Добавить водителя</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreateDriver">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label>Фамилия</label>
+                <input asp-for="DriverSurname" class="form-control" />
+                <span asp-validation-for="DriverSurname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label>Имя</label>
+                <input asp-for="DriverName" class="form-control" />
+                <span asp-validation-for="DriverName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label>Отчество</label>
+                <input asp-for="DriverPatronymic" class="form-control" />
+                <span asp-validation-for="DriverPatronymic" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label>Дата рождения</label>
+                <input asp-for="Birthday" class="form-control" />
+                <span asp-validation-for="Birthday" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label>Номер прав</label>
+                <input asp-for="DriverCardId" class="form-control" />
+                <span asp-validation-for="DriverCardId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label>Дата последнего медосмотра</label>
+                <input asp-for="LastMedicalInspection" class="form-control" />
+                <span asp-validation-for="LastMedicalInspection" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label>Идентификационный номер</label>
+                <input asp-for="IdentificationNumber" class="form-control" />
+                <span asp-validation-for="IdentificationNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Home/Index">Back to List</a>
+</div>
+

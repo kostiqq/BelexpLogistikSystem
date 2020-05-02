@@ -8,6 +8,8 @@ namespace BelexpLogistikWebApp
         public Trailers()
         {
             Cars = new HashSet<Cars>();
+            Waybill = new HashSet<Waybill>();
+
         }
 
         public int Id { get; set; }
@@ -15,5 +17,6 @@ namespace BelexpLogistikWebApp
         public string RegisrtSign { get; set; }
 
         public virtual ICollection<Cars> Cars { get; set; }
+        public virtual ICollection<Waybill> Waybill { get; set; }
     }
 }

@@ -4,15 +4,19 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Identity;
 using BelexpLogistikWebApp.Models;
 using BelexpLogistikWebApp.ViewModels;
+using Microsoft.AspNetCore.Authorization;
+using System;
+using Microsoft.EntityFrameworkCore;
 
 namespace BelexpLogistikWebApp.Controllers
 {
     public class UsersController : Controller
     {
         UserManager<User> _userManager;
-
-        public UsersController(UserManager<User> userManager)
+        BelexpLogistikContext db;
+        public UsersController(UserManager<User> userManager, BelexpLogistikContext context)
         {
+            db = context;
             _userManager = userManager;
         }
 
@@ -102,7 +106,74 @@ namespace BelexpLogistikWebApp.Controllers
             ChangePasswordViewModel model = new ChangePasswordViewModel { Id = user.Id, Email = user.Email };
             return View(model);
         }
-
+        [HttpGet]
+        [Authorize(Roles = "Администратор")]
+        public ActionResult CreateDriver()
+        {
+            return View();
+        }
+        [HttpPost]
+        [Authorize(Roles = "Администратор")]
+        public ActionResult CreateDriver(Drivers driver)
+        {
+            db.Drivers.Add(driver);
+            db.SaveChanges();
+            return RedirectToAction("Home/Index");
+        }
+        [HttpGet]
+        [Authorize(Roles = "Администратор")]
+        public ActionResult DeleteDriver(int id)
+        {
+            Drivers driver = db.Drivers.Find(id);
+            if (driver == null)
+            {
+                return HttpNotFound();
+            }
+            return View(driver);
+        }
+        public IActionResult DriverList()
+        {
+            var drivers = db.Drivers;
+            return View(drivers);
+        }
+        private ActionResult HttpNotFound()
+        {
+            throw new NotImplementedException();
+        }
+        [HttpGet]
+        public ActionResult EditDriver(int? id)
+        {
+            if (id == null)
+            {
+                return HttpNotFound();
+            }
+            Drivers driver = db.Drivers.Find(id);
+            if (driver != null)
+            {
+                return View(driver);
+            }
+            return HttpNotFound();
+        }
+        [HttpPost]
+        public ActionResult EditDriver(Drivers driver)
+        {
+            db.Entry(driver).State = EntityState.Modified;
+            db.SaveChanges();
+            return RedirectToAction("Home/Index");
+        }
+        [HttpPost, ActionName("DeleteDriver")]
+        [Authorize(Roles = "Администратор")]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            Drivers driver = db.Drivers.Find(id);
+            if(driver == null)
+            {
+                return HttpNotFound();
+            }
+            db.Drivers.Remove(driver);
+            db.SaveChanges();
+            return RedirectToAction("Home/Index");
+        }
         [HttpPost]
         public async Task<IActionResult> ChangePassword(ChangePasswordViewModel model)
         {

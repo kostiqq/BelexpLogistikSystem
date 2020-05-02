@@ -1,7 +1,51 @@
-﻿
+﻿@model IEnumerable<Waybill>
 @{
     ViewData["Title"] = "Index";
 }
+<meta charset="utf-8">
+<link href='http://fonts.googleapis.com/css?family=Roboto:700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<link href="~/css/adminmainpage.css" rel="stylesheet" type="text/css">
+<link href="~/css/site.css" rel="stylesheet" type="text/css">
+<script src="~/js/site.js"></script>
+<body>
+    <h3 class="hInline">Путевые листы <input type="text" class="leftInputSearch" placeholder="Поиск" /></h3>
 
-<h1>Waybill</h1>
-
+    <table class="table">
+        <tr>
+            <th>Путевой лист номер</th>
+            <th>Дата создания</th>
+            <th>Машина</th>
+            <th>Водитель</th>
+            <th>Прицеп</th>
+            <th>Серия</th>
+            <th></th>
+        </tr>
+        @foreach (var waybill in Model)
+        {
+            <tr>
+                <td>
+                    @waybill.Id
+                </td>
+                <td>
+                    @waybill.CreateDate
+                </td>
+                <td>
+                    @waybill.Car.CarModel
+                </td>
+                <td>
+                    @waybill.Driver.DriverSurname @waybill.Driver.DriverName
+                </td>
+                <td>
+                    @waybill.Trailer.TrailerModel
+                </td>
+                <td>
+                    @waybill.WaybillSeries
+                </td>
+                <td>
+                    @Html.ActionLink("Подробнее", "Info", new { id = waybill.Id }, null)
+                </td>
+            </tr>
+        }
+    </table>
+</body>

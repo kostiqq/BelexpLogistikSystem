@@ -1,36 +1,36 @@
-﻿@model IEnumerable<Orders>
-
+﻿@model BelexpLogistikWebApp.Orders
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
 <div asp-validation-summary="All"></div>
+<h2>Заказ №@Model.Id</h2>
+<div>
+    <table class="table">
+        <tr>
+            <th>Заказчик:</th>
+            <td>@Html.DisplayFor(model => model.Costumer.CostumerName)</td>
+        </tr>
+        <tr>
+            <th>Город назначения:</th>
+            <td>@Html.DisplayFor(model => model.DepartureCityNavigation.CityName)</td>
+        </tr>
+        <tr>
+            <th rowspan="2">Груз:</th>
+            <td>@Html.DisplayFor(model => model.Goods.GoodsName)</td>
+        </tr>
+        <tr>
+            <td>Вес груза: @Html.DisplayFor(model => model.Goods.GoodsWeight)  тонны</td>
+        </tr>
+        <tr>
+            <th>Пожелания к заказу:</th>
+            <td>
+                @Html.DisplayFor(model => model.OtherInfo)
+            </td>
+        </tr>
 
-<form asp-action="InfoEnd" method="post">
-    <div>
-        <table class="table">
-            <tr>
-                <th>Заказчик:</th>
-                <td>fjkvkr</td>
-            </tr>
-            <tr>
-                <th>Город назначения:</th>
-                <td>bndfskj ej</td>
-            </tr>
-            <tr>
-                <th rowspan="2">Груз:</th>
-                <td>gjkfdl ejwr</td>
-            </tr>
-            <tr>
-                <td>jgfr rjkerjerekst jrkefnktgn rjngknkre rjenoegnkjr rjgnkfnr rnfejk</td>
-            </tr>
-            <tr>
-                <th>Пожелания к заказу:</th>
-                <td>
-                    jgfk ferwgtnktrngntfg jkwrgtntrkjn rjkefkrt k rnrkrntf
-                </td>
-            </tr>
-
-        </table>
-    </div>
-    <div class="orderHiddenButt2">
-        <button type="submit" class="btn btn-primary">Просмотреть накладную</button>
-        <button type="submit" class="btn btn-primary">Просмотреть путевой лист</button>
-    </div>
-</form>
+    </table>
+</div>
+<div class="orderHiddenButt2">
+    @*<button type="submit" class="btn btn-primary"> Просмотреть накладную</button>*@
+    <button type="submit" class="btn btn-primary"> Просмотреть путевой лист</button>
+</div>

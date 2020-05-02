@@ -1,0 +1,52 @@
+﻿@model BelexpLogistikWebApp.Waybill
+
+@{
+    ViewData["Title"] = "Info";
+}
+
+<div>
+    <h4>Путевой лист № @Model.Id</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Действителен до
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ShelfLifeFor)
+        </dd>
+        <dt class = "col-sm-2">
+            Дата создания
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CreateDate)
+        </dd>
+        <dt class = "col-sm-2">
+            Серия путевого листа
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.WaybillSeries)
+        </dd>
+        <dt class = "col-sm-2">
+            Машина:
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Car.CarModel)
+        </dd>
+        <dt class = "col-sm-2">
+            Водитель
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Driver.DriverName)
+        </dd>
+        <dt class = "col-sm-2">
+            Прицеп
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Trailer.Id)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Изменить данные</a> |
+    <a asp-action="Index">Назад</a> 
+</div>

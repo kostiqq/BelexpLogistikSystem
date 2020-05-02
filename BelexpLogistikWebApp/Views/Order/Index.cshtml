@@ -74,7 +74,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="2"><a asp-controller="Order" asp-action="InfoEnd">Полная информация...</a></td>
+                    <td colspan="2">@Html.ActionLink("Полная информация...", "InfoEnd", new { id = order.Id }, null)</td>
                 </tr>
             }
         </table>

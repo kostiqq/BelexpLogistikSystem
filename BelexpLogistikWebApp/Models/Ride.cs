@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace BelexpLogistikWebApp
 {
@@ -13,7 +14,9 @@ namespace BelexpLogistikWebApp
         public int Id { get; set; }
         public int DriverId { get; set; }
         public int CarId { get; set; }
+        [DataType(DataType.Date)]
         public DateTime? DepartureDate { get; set; }
+        [DataType(DataType.Date)]
         public DateTime? ArrivalDate { get; set; }
         public int OrderId { get; set; }
 

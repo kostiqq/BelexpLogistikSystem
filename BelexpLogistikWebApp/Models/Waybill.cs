@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace BelexpLogistikWebApp
 {
     public partial class Waybill
     {
         public int Id { get; set; }
+        [DataType(DataType.Date)]
         public DateTime ShelfLifeFor { get; set; }
+        [DataType(DataType.Date)]
         public DateTime CreateDate { get; set; }
         public int? CarId { get; set; }
         public int? DriverId { get; set; }
@@ -15,5 +18,6 @@ namespace BelexpLogistikWebApp
 
         public virtual Cars Car { get; set; }
         public virtual Drivers Driver { get; set; }
+        public virtual Trailers Trailer { get; set; }
     }
 }

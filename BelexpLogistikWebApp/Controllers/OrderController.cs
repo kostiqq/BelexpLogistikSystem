@@ -25,9 +25,11 @@ namespace BelexpLogistikWebApp.Controllers
             var order = orders.Where(p => p.Id == id).FirstOrDefault(p => p.Id == id);
             return View(order);
         }
-        public IActionResult InfoEnd()
+        public IActionResult InfoEnd(int? id)
         {
-            return View("InfoEnd");
+            var orders = db.Orders.Include(p => p.Costumer).Include(p => p.Goods).Include(p => p.Ride).Include(p => p.DepartureCityNavigation);
+            var order = orders.Where(p => p.Id == id).FirstOrDefault(p => p.Id == id);
+            return View(order);
         }
     }
 }
