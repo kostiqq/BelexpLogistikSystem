@@ -19,12 +19,13 @@ namespace BelexpLogistikWebApp.Controllers
             db = context;
             _userManager = userManager;
         }
-
+        [Authorize(Roles = "Администратор")]
         public IActionResult Index() => View(_userManager.Users.ToList());
-
+        [Authorize(Roles = "Администратор")]
         public IActionResult Create() => View();
 
         [HttpPost]
+        [Authorize(Roles = "Администратор")]
         public async Task<IActionResult> Create(CreateUserViewModel model)
         {
             if (ModelState.IsValid)
@@ -45,7 +46,7 @@ namespace BelexpLogistikWebApp.Controllers
             }
             return View(model);
         }
-
+        [Authorize(Roles = "Администратор")]
         public async Task<IActionResult> Edit(string id)
         {
             User user = await _userManager.FindByIdAsync(id);
@@ -58,6 +59,7 @@ namespace BelexpLogistikWebApp.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Администратор")]
         public async Task<IActionResult> Edit(EditUserViewModel model)
         {
             if (ModelState.IsValid)
@@ -87,6 +89,7 @@ namespace BelexpLogistikWebApp.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Администратор")]
         public async Task<ActionResult> Delete(string id)
         {
             User user = await _userManager.FindByIdAsync(id);
@@ -96,6 +99,7 @@ namespace BelexpLogistikWebApp.Controllers
             }
             return RedirectToAction("Index");
         }
+        [Authorize(Roles = "Администратор")]
         public async Task<IActionResult> ChangePassword(string id)
         {
             User user = await _userManager.FindByIdAsync(id);
@@ -131,16 +135,19 @@ namespace BelexpLogistikWebApp.Controllers
             }
             return View(driver);
         }
+        [Authorize(Roles = "Администратор")]
         public IActionResult DriverList()
         {
             var drivers = db.Drivers;
             return View(drivers);
         }
+        [Authorize(Roles = "Администратор")]
         private ActionResult HttpNotFound()
         {
             throw new NotImplementedException();
         }
         [HttpGet]
+        [Authorize(Roles = "Администратор")]
         public ActionResult EditDriver(int? id)
         {
             if (id == null)
@@ -155,6 +162,7 @@ namespace BelexpLogistikWebApp.Controllers
             return HttpNotFound();
         }
         [HttpPost]
+        [Authorize(Roles = "Администратор")]
         public ActionResult EditDriver(Drivers driver)
         {
             db.Entry(driver).State = EntityState.Modified;
@@ -175,6 +183,7 @@ namespace BelexpLogistikWebApp.Controllers
             return RedirectToAction("Home/Index");
         }
         [HttpPost]
+        [Authorize(Roles = "Администратор")]
         public async Task<IActionResult> ChangePassword(ChangePasswordViewModel model)
         {
             if (ModelState.IsValid)
