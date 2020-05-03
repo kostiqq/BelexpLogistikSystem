@@ -6,7 +6,10 @@ a.navbar-brand {
   text-align: center;
   word-break: break-all;
 }
-.btn-sm{
+label {
+    color: red;
+}
+.btn-sm {
     float: right;
     margin-left: 8px;
 }

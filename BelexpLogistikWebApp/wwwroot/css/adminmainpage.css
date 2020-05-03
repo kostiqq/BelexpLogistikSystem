@@ -54,12 +54,16 @@ li{
         margin-right: 14px;
     }
 
-    .widget li:nth-child(1):before {
+    /*.widget li:nth-child(1):before {
         content: "\f0c0";
     }
 
     .widget li:nth-child(2):before {
         content: "\f02d";
+    }
+
+    .widget li:last-child:before {
+        content: "\f0d1";
     }
 
     .widget2 li:nth-child(1):before {
@@ -75,7 +79,7 @@ li{
     }
     .widget2 li:nth-child(4):before {
         content: "\f0ea";
-    }
+    }*/
 
     .buttonText {
         font: 18px/1.5 Helvetica, Arial, sans-serif;
