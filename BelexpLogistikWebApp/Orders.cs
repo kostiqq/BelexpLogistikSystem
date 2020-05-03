@@ -14,12 +14,14 @@ namespace BelexpLogistikWebApp
         public int CostumerId { get; set; }
         public int GoodsId { get; set; }
         public int? DepartureCity { get; set; }
+        public bool? IsComplete { get; set; }
+        public int? WaybillId { get; set; }
         public string OtherInfo { get; set; }
-        public bool IsComplete { get; set; }
 
         public virtual Costumers Costumer { get; set; }
         public virtual Cities DepartureCityNavigation { get; set; }
         public virtual Goods Goods { get; set; }
+        public virtual Waybill Waybill { get; set; }
         public virtual ICollection<Ride> Ride { get; set; }
     }
 }

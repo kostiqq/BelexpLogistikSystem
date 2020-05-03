@@ -32,7 +32,7 @@ namespace BelexpLogistikWebApp
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Server=DESKTOP-BLUJC71\\SQLEXPRESS;Database=BelexpLogistik;Trusted_Connection=True;");
+                optionsBuilder.UseSqlServer("Server=DESKTOP-BLUJC71\\SQLEXPRESS;Database=BelexpLogistik;Integrated Security=True;Trusted_Connection=True;");
             }
         }
 
@@ -71,18 +71,10 @@ namespace BelexpLogistikWebApp
                     .IsRequired()
                     .HasMaxLength(20);
 
-                entity.Property(e => e.TrailersId).HasColumnName("TrailersID");
-
                 entity.HasOne(d => d.Owner)
                     .WithMany(p => p.Cars)
                     .HasForeignKey(d => d.OwnerId)
                     .HasConstraintName("FK_Cars_CarOwner1");
-
-                entity.HasOne(d => d.Trailers)
-                    .WithMany(p => p.Cars)
-                    .HasForeignKey(d => d.TrailersId)
-                    .OnDelete(DeleteBehavior.Cascade)
-                    .HasConstraintName("FK_Cars_Trailers");
             });
 
             modelBuilder.Entity<Cities>(entity =>
@@ -127,6 +119,8 @@ namespace BelexpLogistikWebApp
             {
                 entity.Property(e => e.Birthday).HasColumnType("date");
 
+                entity.Property(e => e.DriverCardId).HasMaxLength(15);
+
                 entity.Property(e => e.DriverName)
                     .IsRequired()
                     .HasMaxLength(20);
@@ -138,6 +132,8 @@ namespace BelexpLogistikWebApp
                 entity.Property(e => e.DriverSurname)
                     .IsRequired()
                     .HasMaxLength(20);
+
+                entity.Property(e => e.IsFree).HasDefaultValueSql("((1))");
 
                 entity.Property(e => e.LastMedicalInspection).HasColumnType("date");
             });
@@ -159,6 +155,8 @@ namespace BelexpLogistikWebApp
 
                 entity.Property(e => e.OtherInfo).HasMaxLength(100);
 
+                entity.Property(e => e.WaybillId).HasColumnName("WaybillID");
+
                 entity.HasOne(d => d.Costumer)
                     .WithMany(p => p.Orders)
                     .HasForeignKey(d => d.CostumerId)
@@ -174,6 +172,12 @@ namespace BelexpLogistikWebApp
                     .WithMany(p => p.Orders)
                     .HasForeignKey(d => d.GoodsId)
                     .HasConstraintName("FK_Orders_Goods");
+
+                entity.HasOne(d => d.Waybill)
+                    .WithMany(p => p.Orders)
+                    .HasForeignKey(d => d.WaybillId)
+                    .OnDelete(DeleteBehavior.Cascade)
+                    .HasConstraintName("FK_Orders_Waybill");
             });
 
             modelBuilder.Entity<Ride>(entity =>
@@ -248,6 +252,12 @@ namespace BelexpLogistikWebApp
                     .HasForeignKey(d => d.DriverId)
                     .OnDelete(DeleteBehavior.Cascade)
                     .HasConstraintName("FK_Waybill_Drivers");
+
+                entity.HasOne(d => d.Trailers)
+                    .WithMany(p => p.Waybill)
+                    .HasForeignKey(d => d.TrailersId)
+                    .OnDelete(DeleteBehavior.Cascade)
+                    .HasConstraintName("FK_Waybill_Trailers");
             });
 
             OnModelCreatingPartial(modelBuilder);

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 
 namespace BelexpLogistikWebApp
 {
@@ -17,15 +16,12 @@ namespace BelexpLogistikWebApp
         public string CarNumber { get; set; }
         public string RegistrSign { get; set; }
         public double? CarMileage { get; set; }
-        [DataType(DataType.Date)]
         public DateTime? LastTechnicalInspection { get; set; }
         public int CarryingCapacity { get; set; }
         public double? FuelConsumption { get; set; }
-        public int? TrailersId { get; set; }
         public int OwnerId { get; set; }
 
         public virtual CarOwner Owner { get; set; }
-        public virtual Trailers Trailers { get; set; }
         public virtual ICollection<Ride> Ride { get; set; }
         public virtual ICollection<Waybill> Waybill { get; set; }
     }

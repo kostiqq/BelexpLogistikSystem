@@ -16,12 +16,12 @@ namespace BelexpLogistikWebApp.Controllers
         }
         public IActionResult Index()
         {
-            var waybills = db.Waybill.Include(p => p.Car).Include(p => p.Driver).Include(p => p.Trailer);
+            var waybills = db.Waybill.Include(p => p.Car).Include(p => p.Driver).Include(p => p.Trailers);
             return View(waybills);
         }
         public IActionResult Info(int? id)
         {
-            var waybills = db.Waybill.Include(p => p.Car).Include(p => p.Driver).Include(p => p.Trailer);
+            var waybills = db.Waybill.Include(p => p.Car).Include(p => p.Driver).Include(p => p.Trailers);
             var waybill = waybills.Where(p => p.Id == id).FirstOrDefault(p => p.Id == id);
             return View(waybill);
         }
