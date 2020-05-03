@@ -37,7 +37,8 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+
+        @*@foreach (var item in Model) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.DriverSurname)
@@ -64,7 +65,27 @@
                 <a asp-action="EditDriver" asp-route-id="@item.Id">Изменить информацию о водителе</a> |
                 <a asp-action="DeleteDriver" asp-route-id="@item.Id">Удалить</a>
             </td>
+        </tr>*@
+
+        <tr>
+            <td>
+fghjk            </td>
+            <td>
+fghjhgffgh            </td>
+            <td>
+tyukjh            </td>
+            <td>
+2121212121            </td>
+            <td>
+5678            </td>
+            <td>
+dsrhftgyhjgjhm            </td>
+            <td>
+fghj            </td>
+            <td>
+                <a asp-action="EditDriver" asp-route-id="">Изменить</a><br>
+                <a asp-action="DeleteDriver" asp-route-id="">Удалить</a>
+            </td>
         </tr>
-}
     </tbody>
 </table>

@@ -16,7 +16,8 @@ namespace BelexpLogistikWebApp.Controllers
         }
         public IActionResult Drivers()
         {
-            return View(db.Drivers.ToList());
+            return View();
+            ///return View(db.Drivers.ToList());
         }
     }
 }

@@ -10,6 +10,29 @@ a.navbar-brand {
     float: right;
     margin-left: 8px;
 }
+.tableCreateDriver td{
+    width: 500px;
+}
+.tableCreateDriver input:nth-child(2n) {
+    width: 500px;
+    margin-right: 40px;
+}
+.tableCreateDriver td:last-child {
+    width: 150px;
+    margin-left: 400px;
+}
+
+.tableCreateDriver input:nth-child(2n){
+    margin-right: 25px;
+}
+.WidthFormCreate {
+    margin: auto;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+    .WidthFormCreate input {
+        width: 70%;
+    }
 .navbar-nav {
     position: absolute;
     float: right;

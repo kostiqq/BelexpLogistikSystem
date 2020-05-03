@@ -19,6 +19,7 @@ li{
         font-size: 24px;
         font-weight: normal;
         color: #424949;
+        /*color: red;*/
     }
 
     .widget ul {
@@ -61,7 +62,9 @@ li{
     .widget li:nth-child(2):before {
         content: "\f02d";
     }
-
+.widget li:nth-child(3):before {
+    content: "\f0d1";
+}
     .widget2 li:nth-child(1):before {
         content: "\f0d1";
     }
