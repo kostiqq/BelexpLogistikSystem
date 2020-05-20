@@ -18,7 +18,7 @@ namespace BelexpLogistikWebApp.Controllers
         {
             var waybills = db.Waybill.Include(p => p.Car).Include(p => p.Driver).Include(p => p.Trailers);
             return View(waybills);
-        }
+        }  
         public IActionResult Info(int? id)
         {
             var waybills = db.Waybill.Include(p => p.Car).Include(p => p.Driver).Include(p => p.Trailers);

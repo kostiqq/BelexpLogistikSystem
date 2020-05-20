@@ -5,7 +5,7 @@
 }
         <h1>Список водителей</h1>
         <p>
-            <a asp-action="CreateDriver">Create New</a>
+            <a asp-action="CreateDriver">Добавить нового водителя</a>
         </p>
         <table class="table">
             <thead>
@@ -35,56 +35,35 @@
                 </tr>
             </thead>
             <tbody>
-                @*@foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DriverSurname)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DriverName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DriverPatronymic)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Birthday)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DriverCardId)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.LastMedicalInspection)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.IdentificationNumber)
-                </td>
-                <td>
-                    <a asp-action="EditDriver" asp-route-id="@item.Id">Изменить информацию о водителе</a> |
-                    <a asp-action="DeleteDriver" asp-route-id="@item.Id">Удалить</a>
-                </td>
-            </tr>
-        }*@
+                @foreach (var item in Model)
+                {
                 <tr>
                     <td>
-                        ndjkshksjxjkdjks
+                        @Html.DisplayFor(modelItem => item.DriverSurname)
                     </td>
                     <td>
-dsjkbjad                    </td>
+                        @Html.DisplayFor(modelItem => item.DriverName)
+                    </td>
                     <td>
-kaxlmxkld                    </td>
+                        @Html.DisplayFor(modelItem => item.DriverPatronymic)
+                    </td>
                     <td>
-20202020                    </td>
+                        @Html.DisplayFor(modelItem => item.Birthday)
+                    </td>
                     <td>
-r92839338924                    </td>
+                        @Html.DisplayFor(modelItem => item.DriverCardId)
+                    </td>
                     <td>
-3838                    </td>
+                        @Html.DisplayFor(modelItem => item.LastMedicalInspection)
+                    </td>
                     <td>
-8483                    </td>
+                        @Html.DisplayFor(modelItem => item.IdentificationNumber)
+                    </td>
                     <td>
-                        <a asp-action="EditDriver" asp-route-id="">Изменить</a> |
-                        <a asp-action="DeleteDriver" asp-route-id="">Удалить</a>
+                        <a asp-action="EditDriver" asp-route-id="@item.Id">Изменить</a> |
+                        <a asp-action="DeleteDriver" asp-route-id="@item.Id">Удалить</a>
                     </td>
                 </tr>
+                }
             </tbody>
         </table>

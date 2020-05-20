@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - БелэкспЛогистик</title>
+    <title>@ViewData["Title"] - Белэкс-Логистик</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link href="~/css/site.css" rel="stylesheet" type="text/css">
 </head>
@@ -11,16 +11,26 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">БелэкспЛогистик</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Белэкс-Логистик</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
+                        <li>
+                            Услуги
+                        </li>
+                        <li>
+                            О компании
+                        </li>
+                        <li>
+                            <form method="get" asp-controller="Order" asp-action="CreateOrder">
+                                <input class="exitBut" type="submit" value="Оставить заявку" />
+                            </form>
+                        </li>
                         @if (User.Identity.IsAuthenticated)
                         {
-                            @*<li>@User.Identity.Name &nbsp;&nbsp;&nbsp;</li>*@
                             <li>
                                 <form method="post" asp-controller="Account" asp-action="Logout">
                                     <input class="exitBut" type="submit" value="Выход" />
@@ -31,7 +41,7 @@
                         {
                             <li>
                                 <form method="post" asp-controller="Account" asp-action="Login">
-                                    <input class="exitBut" type="submit" value="Войти" />
+                                    <input class="exitBut" type="submit" value="Войти в личный кабинет" />
                                 </form>
                             </li>
                         }
@@ -48,7 +58,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2020 - БелэкспЛогистик
+            &copy; 2020 - Белэкс-Логистик
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

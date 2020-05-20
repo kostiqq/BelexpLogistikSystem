@@ -8,18 +8,18 @@
     <table class="table">
         <tr>
             <th>Заказчик:</th>
-            <td>@Html.DisplayFor(model => model.Costumer.CostumerName)</td>
+            @*<td>@Html.DisplayFor(model => model.User.FirstName)</td>*@
         </tr>
         <tr>
             <th>Город назначения:</th>
-            <td>@Html.DisplayFor(model => model.DepartureCityNavigation.CityName)</td>
+            <td>@Html.DisplayFor(model => model.DepartureCity)</td>
         </tr>
         <tr>
             <th rowspan="2">Груз:</th>
-            <td>@Html.DisplayFor(model => model.Goods.GoodsName)</td>
+            <td>@Html.DisplayFor(model => model.GoodsName)</td>
         </tr>
         <tr>
-            <td>Вес груза: @Html.DisplayFor(model => model.Goods.GoodsWeight)  тонны</td>
+            <td>Вес груза: @Html.DisplayFor(model => model.GoodsWeight)  тонны</td>
         </tr>
         <tr>
             <th>Пожелания к заказу:</th>

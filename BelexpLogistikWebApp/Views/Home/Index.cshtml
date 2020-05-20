@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <link href="~/css/adminmainpage.css" rel="stylesheet" type="text/css">
 <body>
+
     @if (User.Identity.IsAuthenticated)
     {
         if (User.IsInRole("Администратор"))
@@ -16,7 +17,7 @@
                 <ul>
                     <li class="color"><a asp-controller="Users" asp-action="Index" id="button1">Управление пользователями</a></li>
                     <li class="color"><a asp-controller="Roles" asp-action="Index" id="button2" class="buttonText">Управление ролями</a></li>
-                    <li class="color"><a asp-controller="Driver" asp-action="Drivers" id="button1">Список водителей</a></li>
+                    <li class="color"><a asp-controller="Users" asp-action="DriverList" id="button1">Список водителей</a></li>
                 </ul>
             </div>
         }

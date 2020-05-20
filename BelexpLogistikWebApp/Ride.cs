@@ -8,7 +8,6 @@ namespace BelexpLogistikWebApp
         public int Id { get; set; }
         public int DriverId { get; set; }
         public int CarId { get; set; }
-        public DateTime? DepartureDate { get; set; }
         public DateTime? ArrivalDate { get; set; }
         public int? OrderId { get; set; }
 
