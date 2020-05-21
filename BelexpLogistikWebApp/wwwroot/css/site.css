@@ -6,33 +6,27 @@ a.navbar-brand {
   text-align: center;
   word-break: break-all;
 }
-.btn-sm{
+label {
+    color: red;
+}
+.btn-sm {
     float: right;
     margin-left: 8px;
 }
-.tableCreateDriver td{
-    width: 500px;
+.img-responsive {
+    position: absolute;
+    top: 0;
+    width: 75px;
+    height: 75px;
+    z-index: 2;
+    border: 7px solid white;
+    border-radius: 100%;
+    
 }
-.tableCreateDriver input:nth-child(2n) {
-    width: 500px;
-    margin-right: 40px;
-}
-.tableCreateDriver td:last-child {
-    width: 150px;
-    margin-left: 400px;
+main {
+    margin-left: 150px;
 }
 
-.tableCreateDriver input:nth-child(2n){
-    margin-right: 25px;
-}
-.WidthFormCreate {
-    margin: auto;
-    margin-left: 15%;
-    margin-right: 15%;
-}
-    .WidthFormCreate input {
-        width: 70%;
-    }
 .navbar-nav {
     position: absolute;
     float: right;
@@ -288,3 +282,310 @@ tr .informationOrdersNotEnd, tr .informationOrdersEnd {
     .inpCreateList:focus {
         outline: none;
     }
+
+.heightnavbar {
+    height: 45px;
+}
+
+.backDivMainIMG {
+    float: left;
+    position: relative;
+    left: -250px;
+    z-index: 0;
+    height: 460px;
+}
+
+    .backgrDivMainFoot {
+    background: radial-gradient(rgb(245, 246, 255), rgb(232, 235, 251), rgb(220, 225, 246), rgb(207, 214, 242), rgb(194, 203, 238), rgb(182, 193, 233), rgb(169, 182, 229), rgb(157, 172, 224), rgb(144, 161, 220), rgb(131, 150, 216), rgb(119, 140, 211), rgb(106, 129, 207));
+}
+.htmlMainStrDiv {
+    float: left;
+    position: fixed;
+    left: 0;
+    height: auto;
+    background: radial-gradient(rgb(245, 246, 255), rgb(232, 235, 251), rgb(220, 225, 246), rgb(207, 214, 242), rgb(194, 203, 238), rgb(182, 193, 233), rgb(169, 182, 229), rgb(157, 172, 224), rgb(144, 161, 220), rgb(131, 150, 216), rgb(119, 140, 211), rgb(106, 129, 207));
+}
+.footerwhiteImg img{
+    width: 25px;
+}
+footer {
+    background-color: blue;
+    height: 100px;
+    color: antiquewhite;
+}
+.footerwhiteyear{
+    color:white;
+}
+.ulfiv li{
+    display:inline-block;
+
+}
+.belexbluemain {
+    font-weight: 900;
+    font-size: 7em;
+    color: #0059b3;
+    border-bottom: 1px solid white;
+    position: relative;
+    left: 100px;
+    top: -440px;
+    filter: drop-shadow(1px 2px 0 white);
+}
+.belexwhitemain {
+    font-weight:700;
+    font-size: 2.5em;
+    color: white;
+    position: relative;
+    left: 100px;
+    top: -390px;
+    filter: drop-shadow(0.3px 0.3px  1px black);
+}
+.belexblueminmain {
+    font-weight: 700;
+    font-size: 1.5em;
+    color: #004080;
+    position: relative;
+    left: 100px;
+    top: -420px;
+}
+.shapkaMainBut {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    margin-top: 30px;
+    padding: 5px;
+    width: auto;
+    margin-right: 10px;
+    font-weight: 600;
+    color: #004080;
+}
+
+    .shapkaMainBut:hover {
+        border: 2px solid #ffcc00;
+        border-radius: 25px;
+    }
+
+.submenuhoverUl {
+    color: white;
+    display: none;
+    list-style: none;
+    position:absolute;
+    margin-left:-35px;
+}
+.stylespanAytoparjLi{
+    color:white;
+    font-size:smaller;
+}
+.submenuhoverUl li {
+    background: #0059b3;
+    width: 120px;
+    position: center;
+    border-bottom: 1px solid white;
+    padding-left: 15px;
+}
+        .submenuhoverUl li:last-child {
+            border-bottom: none;
+        }
+        .submenuhoverUl li:hover {
+        background: #ffcc00;
+        cursor: pointer;
+    }
+.listVosobleMainAbout:hover .submenuhoverUl {
+    display: block;
+    z-index: 2;
+   
+}
+main{
+    margin-right:150px;
+}
+footer .text-muted {
+    background: #004080;
+    color: white;
+}
+label {
+    color: #004080;
+}
+table .tablefooter{
+    color:white;
+    border-collapse:collapse;
+}
+.tablefooter tr td img{
+    width: 55px;
+}
+.tablefooter tr td:nth-child(3) {
+    font-size: x-large;
+    font-weight: 700
+}
+.tablefooter tr td:nth-child(2) {
+    font-size:x-large;
+    font-weight:700
+}
+    .tablefooter tr td {
+    padding-top:20px;
+    color: wheat;
+    padding-right:80px;
+}
+.AEmail{
+    text-decoration:none;
+}
+.h1bluehigh {
+    color: #004080;
+    font-size:5em;
+}
+.backDivMainIMGAboytGostoty {
+    object-fit: cover;
+    width: 1500px;
+    height: 150px;
+    position: relative;
+    left:-300px;
+    right:-500px;
+    z-index:0;
+}
+.spanHistory {
+    z-index: 2;
+    font-weight: 700;
+    font-size: 2.5em;
+    color: #0059b3;
+    position: relative;
+    top: -100px;
+    left: -50px;
+}
+.litllefirstinfpabout{
+    margin-bottom:20px;
+    width:850px;
+}
+.litllefirstinfpabout:last-child {
+    margin-bottom: 50px;
+}
+
+.spanTextSome {
+    color: #0059b3;
+}
+.transperTrackAbout {
+    margin: 25px;
+    width: 450px;
+    opacity: 0.2;
+}
+
+.roadpng {
+    width: 100px;
+    float: left; /* Выравнивание по левому краю */
+    margin: 7px 7px 7px 0;
+}
+.h1bluehigh:last-child {
+    float: right;
+}
+.floatimgcar{
+    width:400px;
+    float:left;
+}
+.obtecPNG {
+    float: right;
+    width: 180px;
+}
+h1 .h1bluehigh:nth-child(2n+1) {
+    float: right;
+}
+.sizeblueh1{
+    font-size:2em;
+}
+.sizepicAytopark1{
+    width:800px;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+.sizepicAytopark2 {
+    width: 800px;
+    margin-top: 20px;     
+    margin-bottom: 50px;
+}
+.NavigationServis{
+    float:left;
+    position:relative;
+    left:-150px;
+    top:10px;
+    height:1300px;
+}
+.UlAutoperev li a {
+    text-decoration: none;
+    color: #0059b3;
+    font-weight: 600;
+}
+.UlAutoperev li {
+   padding:10px;
+}
+    .UlAutoperev li:hover a{
+        color: white;
+    }
+    .UlAutoperev li:hover {
+        background: #ffcc00;
+
+    }
+.UlAutoperev {
+    list-style: none;
+}
+.infoService {
+    position: absolute;
+    left: 470px;
+    width: 800px;
+    overflow-x:hidden;
+}
+.poezdpng, .aviaTransPNG, .sudnopngserv, .autoservPng{
+    opacity:0.2;
+}
+.autoservPng{
+    width:200px;
+    float:left;
+    margin-right:15px;
+}
+.poezdpng {
+    object-fit: cover;
+    width: 700px;
+    height:130px;
+}
+.sudnopngserv{
+    width:200px;
+    float:left;
+    margin-right:15px;
+}
+.aviaTransPNG{
+    width:200px;
+}
+.aviaTransPNG{
+    float:right;
+}
+.createOrderTable {
+    width: 850px;
+}
+.createOrderTable td:nth-child(1){
+    margin-right:15px;
+    padding-right:15px;
+}
+    .createOrderTable tr:last-child td:nth-child(1) {
+height:100px    }
+        /*.UlAutoperev{
+    width:300px;
+    list-style:none;
+}
+.UlAutoperev li {
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    color: #0059b3;
+}
+.UlAutoperev li {
+    color: #0059b3;
+}
+.UlAutoperev li:hover {
+    color: white;
+    background: #ffcc00;
+}
+*/
+        /*.infoService {
+    position: relative;
+    top: 10px;
+    left:-100px;
+    width:1000px;
+}
+.infoService p:last-child{
+    margin-bottom: 50px;
+}*/

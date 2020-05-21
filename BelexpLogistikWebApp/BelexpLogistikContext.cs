@@ -17,11 +17,7 @@ namespace BelexpLogistikWebApp
 
         public virtual DbSet<CarOwner> CarOwner { get; set; }
         public virtual DbSet<Cars> Cars { get; set; }
-        public virtual DbSet<Cities> Cities { get; set; }
-        public virtual DbSet<Costumers> Costumers { get; set; }
-        public virtual DbSet<Country> Country { get; set; }
         public virtual DbSet<Drivers> Drivers { get; set; }
-        public virtual DbSet<Goods> Goods { get; set; }
         public virtual DbSet<Orders> Orders { get; set; }
         public virtual DbSet<Ride> Ride { get; set; }
         public virtual DbSet<Trailers> Trailers { get; set; }
@@ -71,61 +67,17 @@ namespace BelexpLogistikWebApp
                     .IsRequired()
                     .HasMaxLength(20);
 
-                entity.Property(e => e.TrailersId).HasColumnName("TrailersID");
-
                 entity.HasOne(d => d.Owner)
                     .WithMany(p => p.Cars)
                     .HasForeignKey(d => d.OwnerId)
                     .HasConstraintName("FK_Cars_CarOwner1");
-
-                entity.HasOne(d => d.Trailers)
-                    .WithMany(p => p.Cars)
-                    .HasForeignKey(d => d.TrailersId)
-                    .OnDelete(DeleteBehavior.Cascade)
-                    .HasConstraintName("FK_Cars_Trailers");
-            });
-
-            modelBuilder.Entity<Cities>(entity =>
-            {
-                entity.Property(e => e.CityName)
-                    .IsRequired()
-                    .HasMaxLength(20);
-
-                entity.Property(e => e.CountryId)
-                    .HasColumnName("CountryID")
-                    .HasDefaultValueSql("('1')");
-
-                entity.Property(e => e.Region)
-                    .IsRequired()
-                    .HasMaxLength(20);
-
-                entity.HasOne(d => d.Country)
-                    .WithMany(p => p.Cities)
-                    .HasForeignKey(d => d.CountryId)
-                    .HasConstraintName("FK_Cities_Country");
-            });
-
-            modelBuilder.Entity<Costumers>(entity =>
-            {
-                entity.Property(e => e.CostumerEmail).HasMaxLength(20);
-
-                entity.Property(e => e.CostumerName)
-                    .IsRequired()
-                    .HasMaxLength(20);
-
-                entity.Property(e => e.OtherInfo).HasMaxLength(100);
-            });
-
-            modelBuilder.Entity<Country>(entity =>
-            {
-                entity.Property(e => e.CountryName)
-                    .IsRequired()
-                    .HasMaxLength(20);
             });
 
             modelBuilder.Entity<Drivers>(entity =>
             {
                 entity.Property(e => e.Birthday).HasColumnType("date");
+
+                entity.Property(e => e.DriverCardId).HasMaxLength(15);
 
                 entity.Property(e => e.DriverName)
                     .IsRequired()
@@ -139,41 +91,44 @@ namespace BelexpLogistikWebApp
                     .IsRequired()
                     .HasMaxLength(20);
 
+                entity.Property(e => e.IsFree).HasDefaultValueSql("((1))");
+
                 entity.Property(e => e.LastMedicalInspection).HasColumnType("date");
-            });
-
-            modelBuilder.Entity<Goods>(entity =>
-            {
-                entity.Property(e => e.GoodsName)
-                    .IsRequired()
-                    .HasMaxLength(20);
-
-                entity.Property(e => e.Notes).HasMaxLength(100);
             });
 
             modelBuilder.Entity<Orders>(entity =>
             {
-                entity.Property(e => e.CostumerId).HasColumnName("CostumerID");
+                entity.Property(e => e.CostumerName)
+                    .HasMaxLength(30)
+                    .IsFixedLength();
 
-                entity.Property(e => e.GoodsId).HasColumnName("GoodsID");
+                entity.Property(e => e.DepartureCity);
+
+                entity.Property(e => e.Email)
+                    .HasMaxLength(10)
+                    .IsFixedLength();
+
+                entity.Property(e => e.GoodsName)
+                    .HasMaxLength(10)
+                    .IsFixedLength();
+
+                entity.Property(e => e.IsComplete).HasDefaultValueSql("((0))");
 
                 entity.Property(e => e.OtherInfo).HasMaxLength(100);
 
-                entity.HasOne(d => d.Costumer)
-                    .WithMany(p => p.Orders)
-                    .HasForeignKey(d => d.CostumerId)
-                    .HasConstraintName("FK_Orders_Costumers");
+                entity.Property(e => e.PhoneNumber)
+                    .HasMaxLength(20)
+                    .IsFixedLength();
 
-                entity.HasOne(d => d.DepartureCityNavigation)
+                entity.Property(e => e.UserId).HasColumnName("UserID");
+
+                entity.Property(e => e.WaybillId).HasColumnName("WaybillID");
+
+                entity.HasOne(d => d.Waybill)
                     .WithMany(p => p.Orders)
-                    .HasForeignKey(d => d.DepartureCity)
+                    .HasForeignKey(d => d.WaybillId)
                     .OnDelete(DeleteBehavior.Cascade)
-                    .HasConstraintName("FK_Orders_Cities");
-
-                entity.HasOne(d => d.Goods)
-                    .WithMany(p => p.Orders)
-                    .HasForeignKey(d => d.GoodsId)
-                    .HasConstraintName("FK_Orders_Goods");
+                    .HasConstraintName("FK_Orders_Waybill");
             });
 
             modelBuilder.Entity<Ride>(entity =>
@@ -181,8 +136,6 @@ namespace BelexpLogistikWebApp
                 entity.Property(e => e.ArrivalDate).HasColumnType("date");
 
                 entity.Property(e => e.CarId).HasColumnName("CarID");
-
-                entity.Property(e => e.DepartureDate).HasColumnType("date");
 
                 entity.Property(e => e.DriverId).HasColumnName("DriverID");
 
@@ -248,6 +201,12 @@ namespace BelexpLogistikWebApp
                     .HasForeignKey(d => d.DriverId)
                     .OnDelete(DeleteBehavior.Cascade)
                     .HasConstraintName("FK_Waybill_Drivers");
+
+                entity.HasOne(d => d.Trailers)
+                    .WithMany(p => p.Waybill)
+                    .HasForeignKey(d => d.TrailersId)
+                    .OnDelete(DeleteBehavior.Cascade)
+                    .HasConstraintName("FK_Waybill_Trailers");
             });
 
             OnModelCreatingPartial(modelBuilder);

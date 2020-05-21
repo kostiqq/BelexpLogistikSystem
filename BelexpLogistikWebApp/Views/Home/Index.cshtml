@@ -6,7 +6,10 @@
 <link href='http://fonts.googleapis.com/css?family=Roboto:700' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <link href="~/css/adminmainpage.css" rel="stylesheet" type="text/css">
+<style>
+</style>
 <body>
+
     @if (User.Identity.IsAuthenticated)
     {
         if (User.IsInRole("Администратор"))
@@ -15,8 +18,8 @@
                 <h3>Выберите действие</h3>
                 <ul>
                     <li class="color"><a asp-controller="Users" asp-action="Index" id="button1">Управление пользователями</a></li>
-                    <li class="color" ><a asp-controller="Roles" asp-action="Index" id="button2" class="buttonText">Управление ролями</a></li>
-                    <li class="color" ><a asp-controller="Users" asp-action="DriverList" id="button2" class="buttonText">Список водителей</a></li>
+                    <li class="color"><a asp-controller="Roles" asp-action="Index" id="button2" class="buttonText">Управление ролями</a></li>
+                    <li class="color"><a asp-controller="Users" asp-action="DriverList" id="button1">Список водителей</a></li>
                 </ul>
             </div>
         }
@@ -26,19 +29,29 @@
                 <h3>Меню</h3>
                 <ul>
                     <li class="color"><a asp-controller="Driver" asp-action="Drivers" id="button1">Список водителей</a></li>
-                    <li class="color" id="but2"><a asp-controller="Order" asp-action="Index"  id="button2" class="buttonText">Заказы</a></li>
-                    <li class="color"><a asp-controller="Invoice" asp-action="Index" id="button1">Накладные</a></li>
+                    <li class="color" id="but2"><a asp-controller="Order" asp-action="Index" id="button2" class="buttonText">Заказы</a></li>
+                    @*<li class="color"><a asp-controller="Invoice" asp-action="Index" id="button1">Накладные</a></li>*@
                     <li class="color" id="but2"><a asp-controller="Waybill" asp-action="Index" id="button2" class="buttonText">Путевые листы</a></li>
                 </ul>
             </div>
         }
         else
         {
-            
+
         }
     }
     else
     {
-        <h4 align="center">Для начала работы необходимо войти в систему</h4>
+        <div class="htmlMainStrDiv">
+            <img src="https://beleks.ibiz.by/images/company/27279/header.jpg" class="backDivMainIMG" />
+            <div class="backgrDivMainFoot">
+                <span class="belexwhitemain">ГРУППА КОМПАНИЙ</span><br>
+                <span class="belexbluemain">БЕЛЭКС</span><br />
+                <span class="belexblueminmain">
+                    НАДЁЖНОСТЬ И ПРОФЕССИОНАЛИЗМ В ДЕЙСТВИИ<br>
+                    ДОВЕРЯЯ НАМ - ВЫ ДЕЛАЕТЕ РАЗУМНЫЙ ВЫБОР
+                </span>
+            </div>
+        </div>
     }
 </body>

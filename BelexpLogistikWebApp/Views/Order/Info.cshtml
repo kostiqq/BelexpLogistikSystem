@@ -8,18 +8,18 @@
         <table class="table">
             <tr>
                 <th>Заказчик:</th>
-                <td>@Html.DisplayFor(model => model.Costumer.CostumerName)</td>
+                <td>@Html.DisplayFor(model => model.CostumerName)</td>
             </tr>
             <tr>
                 <th>Город назначения:</th>
-                <td>@Html.DisplayFor(model => model.DepartureCityNavigation.CityName)</td>
+                <td>@Html.DisplayFor(model => model.DepartureCity)</td>
             </tr>
             <tr>
                 <th rowspan="2">Груз:</th>
-                <td>@Html.DisplayFor(model => model.Goods.GoodsName)</td>
+                <td>@Html.DisplayFor(model => model.GoodsName)</td>
             </tr>
             <tr>
-                <td>Вес груза:@Html.DisplayFor(model => model.Goods.GoodsWeight)  тонны</td>
+                <td>Вес груза:@Html.DisplayFor(model => model.GoodsWeight)  тонны</td>
             </tr>
             <tr>
                 <th>Пожелания к заказу:</th>
@@ -31,6 +31,6 @@
         </table>
     </div>
     <div class="orderHiddenButt">
-        @*<button type="submit" class="btn btn-primary">Создать накладную</button>*@
         <button type="submit" onclick='location.href="../../Waybill/CreateList"' class="btn btn-primary">Создать путевой лист</button>
+        <a class="btn btn-sm btn-primary" asp-action="EditOrder" asp-route-id="@Model.Id">Изменить информацию о заказе</a>
     </div>

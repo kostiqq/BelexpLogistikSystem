@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -16,20 +14,59 @@ namespace BelexpLogistikWebApp.Controllers
         }
         public IActionResult Index()
         {
-            var orders = db.Orders.Include(p => p.Costumer).Include(p => p.Goods).Include(p => p.Ride).Include(p => p.DepartureCityNavigation);
+            var orders = db.Orders.Include(p => p.Ride);
             return View(orders);
         }
         public IActionResult Info(int? id)
         {
-            var orders = db.Orders.Include(p => p.Costumer).Include(p => p.Goods).Include(p => p.Ride).Include(p => p.DepartureCityNavigation);
+            var orders = db.Orders.Include(p => p.Ride);
             var order = orders.Where(p => p.Id == id).FirstOrDefault(p => p.Id == id);
             return View(order);
         }
         public IActionResult InfoEnd(int? id)
         {
-            var orders = db.Orders.Include(p => p.Costumer).Include(p => p.Goods).Include(p => p.Ride).Include(p => p.DepartureCityNavigation);
+            var orders = db.Orders.Include(p => p.Ride);
             var order = orders.Where(p => p.Id == id).FirstOrDefault(p => p.Id == id);
             return View(order);
+        }
+        [HttpGet]
+        public ActionResult CreateOrder()
+        {
+            return View("CreateOrder");
+        }
+        [HttpPost]
+        public ActionResult CreateOrder(Orders order)
+        {
+            db.Orders.Add(order);
+            db.SaveChanges();
+            return View("Complete");
+        }
+        [HttpGet]
+        public ActionResult EditOrder(int? id)
+        {
+            if (id == null)
+            {
+                return HttpNotFound();
+            }
+            Orders order = db.Orders.Find(id);
+            if (order != null)
+            {
+                return View(order);
+            }
+            return HttpNotFound();
+        }
+
+        private ActionResult HttpNotFound()
+        {
+            throw new NotImplementedException();
+        }
+
+        [HttpPost]
+        public ActionResult EditOrder(Orders order)
+        {
+            db.Entry(order).State = EntityState.Modified;
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }

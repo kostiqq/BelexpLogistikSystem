@@ -3,41 +3,73 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - БелэкспЛогистик</title>
+    <title>@ViewData["Title"] - Белэкс-Логистик</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link href="~/css/site.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white mb-3 heightnavbar">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">БелэкспЛогистик</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img src="~/pic/logo.png" alt="BELEKS" class="img-responsive">
+                </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
-                        @if (User.Identity.IsAuthenticated)
-                        {
-                            @*<li>@User.Identity.Name &nbsp;&nbsp;&nbsp;</li>*@
-                            <li>
-                                <form method="post" asp-controller="Account" asp-action="Logout">
-                                    <input class="exitBut" type="submit" value="Выход" />
-                                </form>
-                            </li>
-                        }
-                        else
-                        {
-                            <li>
-                                <form method="post" asp-controller="Account" asp-action="Login">
-                                    <input class="exitBut" type="submit" value="Войти" />
-                                </form>
-                            </li>
-                        }
-                    </ul>
-                </div>
-            </div>
+                        <li>
+                            <form method="post" asp-controller="Home" asp-action="Service">
+                                <input class="shapkaMainBut" type="submit" value="Услуги" />
+                            </form>
+                        </li>
+                        <li>
+                            <nav class="listVosobleMainAbout">
+                            <input class="shapkaMainBut hoverAbout" type="button" value="О компании" />
+                            <ul class="submenuhoverUl">
+                                <li>
+                                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="About">
+                                        <span class="stylespanAytoparjLi">
+                                            О нас
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Autopark">
+                                        <span class="stylespanAytoparjLi">
+                                            Автопарк
+                                        </span>
+                                        </a>
+                                </li>
+                            </ul>
+        </nav>
+        </li>
+        <li>
+            <form method="get" asp-controller="Order" asp-action="CreateOrder">
+                <input class="shapkaMainBut" type="submit" value="Оставить заявку" />
+            </form>
+        </li>
+        @if (User.Identity.IsAuthenticated)
+        {
+            <li>
+                <form method="post" asp-controller="Account" asp-action="Logout">
+                    <input class="shapkaMainBut" type="submit" value="Выход" />
+                </form>
+            </li>
+        }
+        else
+        {
+            <li>
+                <form method="post" asp-controller="Account" asp-action="Login">
+                    <input class="shapkaMainBut" type="submit" value="Войти в личный кабинет" />
+                </form>
+            </li>
+        }
+        </ul>
+        </div>
+        </div>
         </nav>
     </header>
     <div class="container">
@@ -48,7 +80,20 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2020 - БелэкспЛогистик
+            <table class="tablefooter">
+                <tr>
+                    <td>
+                        &copy; 1995-2020 - БЕЛЭКС
+                    </td>
+                    <td>+375 (232) 55-55-55</td>
+                    <td><a class="AEmail"href="mailto:office@beleks.com">office@beleks.com</a></td>
+                    <td colspan="2">
+                        <img src="~/pic/fiata.png" />
+                        <img src="~/pic/iso.png" />
+                        <img src="~/pic/iru.png" />
+                    </td>
+                </tr>
+            </table>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

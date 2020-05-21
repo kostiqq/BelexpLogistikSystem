@@ -25,7 +25,19 @@ namespace BelexpLogistikWebApp.Controllers
         {
             return View(_userManager.Users.ToList());
         }
-
+        public IActionResult About()
+        {
+            return View("About");
+        }
+        public IActionResult Autopark()
+        {
+            return View("Autopark");
+        }
+        
+        public IActionResult Service()
+        {
+            return View("Service");
+        }
         public IActionResult Privacy()
         {
             return View();

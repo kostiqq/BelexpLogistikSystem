@@ -19,7 +19,6 @@ li{
         font-size: 24px;
         font-weight: normal;
         color: #424949;
-        /*color: red;*/
     }
 
     .widget ul {
@@ -51,7 +50,7 @@ li{
         font-family: FontAwesome;
         font-size: 20px;
         vertical-align: bottom;
-        color: #dd3333;
+        color: steelblue;
         margin-right: 14px;
     }
 
@@ -62,9 +61,11 @@ li{
     .widget li:nth-child(2):before {
         content: "\f02d";
     }
-.widget li:nth-child(3):before {
-    content: "\f0d1";
-}
+
+    .widget li:last-child:before {
+        content: "\f0d1";
+    }
+
     .widget2 li:nth-child(1):before {
         content: "\f0d1";
     }
