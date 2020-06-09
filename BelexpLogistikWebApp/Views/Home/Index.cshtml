@@ -30,14 +30,21 @@
                 <ul>
                     <li class="color"><a asp-controller="Driver" asp-action="Drivers" id="button1">Список водителей</a></li>
                     <li class="color" id="but2"><a asp-controller="Order" asp-action="Index" id="button2" class="buttonText">Заказы</a></li>
-                    @*<li class="color"><a asp-controller="Invoice" asp-action="Index" id="button1">Накладные</a></li>*@
+                    <li class="color"><a asp-controller="Ride" asp-action="Index" id="button1">Список поездок</a></li>
                     <li class="color" id="but2"><a asp-controller="Waybill" asp-action="Index" id="button2" class="buttonText">Путевые листы</a></li>
+                    <li class="color" id="but2"><a asp-controller="Owner" asp-action="Index" id="button2" class="buttonText">Владельцы машин</a></li>
+                    <li class="color" id="but2"><a asp-controller="Car" asp-action="Index" id="button2" class="buttonText">Автопарк</a></li>
                 </ul>
             </div>
         }
-        else
+        if (User.IsInRole("Водитель"))
         {
-
+            <div class="widget widget2">
+                <h3>Меню</h3>
+                <ul>
+                    <li class="color"><a asp-controller="Ride" asp-action="DriverRides" id="button1">Мои поездки</a></li>
+                </ul>
+            </div>
         }
     }
     else

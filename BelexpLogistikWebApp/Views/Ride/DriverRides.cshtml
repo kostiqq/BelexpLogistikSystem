@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Ride>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<script src="~/js/site.js"></script>
+<body>
+    <h3>Поездки</h3>
+    <div>
+        <table class="table informationOrdersNotEnd">
+            <tr>
+                <th>
+                    Номер заказа
+                </th>
+                <th>
+                    Водитель
+                </th>
+                <th>
+                    Машина
+                </th>
+            </tr>
+            @foreach (var ride in Model.Where(p => p.Driver.Other == "54").Where(p => p.IsComplete == false))
+            {
+                <tr>
+                    <td rowspan="2">
+                        @ride.Order.Id
+                    </td>
+                    <td>
+                        @ride.Driver.DriverSurname @ride.Driver.DriverName @ride.Driver.DriverPatronymic
+                    </td>
+                    <td>
+                        @ride.Car.CarModel @ride.Car.CarNumber
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">@Html.ActionLink("Полная информация...", "Info", new { id = ride.Id }, null)</td>
+                </tr>
+                <tr>
+                    <td colspan="2">@Html.ActionLink("Изменить статус поездки", "EditStatus", new { id = ride.Id }, null)</td>
+                </tr>
+            }
+        </table>
+        <form method="get" asp-controller="Ride" asp-action="CreateRide">
+            <input class="shapkaMainBut" type="submit" value="Создать поездку" />
+        </form>
+    </div>
+</body>

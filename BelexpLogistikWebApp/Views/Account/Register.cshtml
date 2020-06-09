@@ -4,23 +4,28 @@
 <form method="post" asp-controller="Account" asp-action="Register">
     <div asp-validation-summary="ModelOnly"></div>
     <div>
-        <label  class="marginTextTop" asp-for="Email"></label><br />
+        <label class="marginTextTop" asp-for="Email"></label><br />
         <input class="registerInput" asp-for="Email" />
         <span asp-validation-for="Email"></span>
     </div>
     <div>
-        <label class="marginTextTop"  asp-for="UserName"></label><br />
+        <label class="marginTextTop" asp-for="UserName"></label><br />
         <input class="registerInput" asp-for="UserName" />
-        <span asp-validation-for="Year"></span>
+        <span asp-validation-for="UserName"></span>
     </div>
     <div>
-        <label class="marginTextTop"  asp-for="Password"></label><br />
+        <label class="marginTextTop" asp-for="Other"></label><br />
+        <input class="registerInput" asp-for="Other" />
+        <span asp-validation-for="Other"></span>
+    </div>
+    <div>
+        <label class="marginTextTop" asp-for="Password"></label><br />
         <input class="registerInput" asp-for="Password" />
         <span asp-validation-for="Password"></span>
     </div>
     <div>
         <label class="marginTextTop" asp-for="PasswordConfirm"></label><br />
-        <input class="registerInput"  asp-for="PasswordConfirm" />
+        <input class="registerInput" asp-for="PasswordConfirm" />
         <span asp-validation-for="PasswordConfirm"></span>
     </div>
     <div>

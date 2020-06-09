@@ -1,0 +1,47 @@
+﻿@model IEnumerable<CarOwner>
+@{
+    ViewData["Title"] = "Index";
+}
+<meta charset="utf-8">
+<link href='http://fonts.googleapis.com/css?family=Roboto:700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<link href="~/css/adminmainpage.css" rel="stylesheet" type="text/css">
+<link href="~/css/site.css" rel="stylesheet" type="text/css">
+<script src="~/js/site.js"></script>
+<body>
+
+    <table class="table">
+        <tr>
+            <th>Имя владельца</th>
+            <th>Номер телефона</th>
+            <th>Электронный адрес</th>
+            <th>Юридическое лицо</th>
+        </tr>
+        @foreach (var owner in Model)
+        {
+            <tr>
+                <td>
+                    @owner.OwnerName
+                </td>
+                <td>
+                    @owner.PhoneNumber
+                </td>
+                <td>
+                    @owner.OwnerEmail
+                </td>
+                @if (owner.IsEntity == true)
+                {
+                <td>
+                    Да
+                </td>
+                }
+                else
+                {
+                    <td>
+                        Нет
+                    </td>
+                }
+            </tr>
+        }
+    </table>
+</body>

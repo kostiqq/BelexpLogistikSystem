@@ -30,7 +30,7 @@ namespace BelexpLogistikWebApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                User user = new User { Email = model.Email, UserName = model.UserName};
+                User user = new User { Email = model.Email, UserName = model.UserName, Other = model.Info};
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -54,7 +54,7 @@ namespace BelexpLogistikWebApp.Controllers
             {
                 return NotFound();
             }
-            EditUserViewModel model = new EditUserViewModel { Id = user.Id, Email = user.Email, UserName=user.UserName };
+            EditUserViewModel model = new EditUserViewModel { Id = user.Id, Email = user.Email, UserName = user.UserName, Other = user.Other };
             return View(model);
         }
 
@@ -70,6 +70,7 @@ namespace BelexpLogistikWebApp.Controllers
                     user.Email = model.Email;
                     user.UserName = model.Email;
                     user.UserName = model.UserName;
+                    user.Other = model.Other;
 
                     var result = await _userManager.UpdateAsync(user);
                     if (result.Succeeded)
@@ -122,7 +123,7 @@ namespace BelexpLogistikWebApp.Controllers
         {
             db.Drivers.Add(driver);
             db.SaveChanges();
-            return RedirectToAction("Home/Index");
+            return RedirectToAction("DriverList");
         }
         [HttpGet]
         [Authorize(Roles = "Администратор")]
@@ -167,7 +168,7 @@ namespace BelexpLogistikWebApp.Controllers
         {
             db.Entry(driver).State = EntityState.Modified;
             db.SaveChanges();
-            return RedirectToAction("Home/Index");
+            return RedirectToAction("DriverList");
         }
         [HttpPost, ActionName("DeleteDriver")]
         [Authorize(Roles = "Администратор")]
@@ -180,7 +181,7 @@ namespace BelexpLogistikWebApp.Controllers
             }
             db.Drivers.Remove(driver);
             db.SaveChanges();
-            return RedirectToAction("Home/Index");
+            return RedirectToAction("DriverList");
         }
         [HttpPost]
         [Authorize(Roles = "Администратор")]

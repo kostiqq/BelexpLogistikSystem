@@ -22,6 +22,7 @@ namespace BelexpLogistikWebApp
         public double? GoodsWeight { get; set; }
         public string OtherInfo { get; set; }
 
+        public virtual Users User { get; set; }
         public virtual Waybill Waybill { get; set; }
         public virtual ICollection<Ride> Ride { get; set; }
     }

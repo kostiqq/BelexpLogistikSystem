@@ -9,8 +9,8 @@ namespace BelexpLogistikWebApp.ViewModels
         public string Email { get; set; }
 
         [Required]
-        [Display(Name = "Год рождения")]
-        public int Year { get; set; }
+        [Display(Name = "Прочая информация")]
+        public string Other { get; set; }
 
         [Required]
         [Display(Name = "Имя пользователя")]

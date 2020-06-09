@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Cars>
+@{
+    ViewData["Title"] = "Index";
+}
+<meta charset="utf-8">
+<link href='http://fonts.googleapis.com/css?family=Roboto:700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<link href="~/css/adminmainpage.css" rel="stylesheet" type="text/css">
+<link href="~/css/site.css" rel="stylesheet" type="text/css">
+<script src="~/js/site.js"></script>
+<body>
+    <table class="table">
+        <tr>
+            <th>Модель автомобиля</th>
+            <th>Номер автомобиля</th>
+            <th>Регистрационный номер</th>
+            <th>Пробег</th>
+            <th>Дата последнего техосмотра</th>
+            <th>Грузоподъёмность</th>
+            <th>Потребление топлива</th>
+            <th>Имя владельца</th>
+            <th></th>
+        </tr>
+        @foreach (var car in Model)
+        {
+            <tr>
+                <td>
+                    @car.CarModel
+                </td>
+                <td>
+                    @car.CarNumber
+                </td>
+                <td>
+                    @car.RegistrSign
+                </td>
+                <td>
+                    @car.CarMileage
+                </td>
+                <td>
+                    @car.LastTechnicalInspection
+                </td>
+                <td>
+                    @car.CarryingCapacity
+                </td>
+                <td>
+                    @car.FuelConsumption
+                </td>
+                <td>
+                    @car.Owner.OwnerName
+                </td>
+                <td>
+                    @Html.ActionLink("Подробнее", "Info", new { id = car.Id }, null)
+                </td>
+            </tr>
+        }
+    </table>
+</body>

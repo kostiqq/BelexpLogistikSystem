@@ -8,5 +8,6 @@ namespace BelexpLogistikWebApp.Models
 {
     public class User : IdentityUser
     {
+        public string Other { get; set; }
     }
 }

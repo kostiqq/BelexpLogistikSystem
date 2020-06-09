@@ -26,7 +26,7 @@ namespace BelexpLogistikWebApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                User user = new User { Email = model.Email, UserName = model.UserName};
+                User user = new User { Email = model.Email, UserName = model.UserName, Other=model.Other};
                 // добавляем пользователя
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)

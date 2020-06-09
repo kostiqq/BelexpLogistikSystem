@@ -20,54 +20,58 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
-                        <li>
-                            <form method="post" asp-controller="Home" asp-action="Service">
-                                <input class="shapkaMainBut" type="submit" value="Услуги" />
-                            </form>
-                        </li>
-                        <li>
-                            <nav class="listVosobleMainAbout">
-                            <input class="shapkaMainBut hoverAbout" type="button" value="О компании" />
-                            <ul class="submenuhoverUl">
-                                <li>
-                                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="About">
-                                        <span class="stylespanAytoparjLi">
-                                            О нас
-                                        </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Autopark">
-                                        <span class="stylespanAytoparjLi">
-                                            Автопарк
-                                        </span>
-                                        </a>
-                                </li>
-                            </ul>
-        </nav>
-        </li>
-        <li>
-            <form method="get" asp-controller="Order" asp-action="CreateOrder">
-                <input class="shapkaMainBut" type="submit" value="Оставить заявку" />
-            </form>
-        </li>
-        @if (User.Identity.IsAuthenticated)
-        {
-            <li>
-                <form method="post" asp-controller="Account" asp-action="Logout">
-                    <input class="shapkaMainBut" type="submit" value="Выход" />
-                </form>
-            </li>
-        }
-        else
-        {
-            <li>
-                <form method="post" asp-controller="Account" asp-action="Login">
-                    <input class="shapkaMainBut" type="submit" value="Войти в личный кабинет" />
-                </form>
-            </li>
-        }
-        </ul>
+                        @if (User.Identity.IsAuthenticated == false)
+                        {
+                            <li>
+                                <form method="post" asp-controller="Home" asp-action="Service">
+                                    <input class="shapkaMainBut" type="submit" value="Услуги" />
+                                </form>
+                            </li>
+                            <li>
+                                <nav class="listVosobleMainAbout">
+                                    <input class="shapkaMainBut hoverAbout" type="button" value="О компании" />
+                                    <ul class="submenuhoverUl">
+                                        <li>
+                                            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="About">
+                                                <span class="stylespanAytoparjLi">
+                                                    О нас
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Autopark">
+                                                <span class="stylespanAytoparjLi">
+                                                    Автопарк
+                                                </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </li>
+
+                            <li>
+                                <form method="get" asp-controller="Order" asp-action="CreateOrder">
+                                    <input class="shapkaMainBut" type="submit" value="Оставить заявку" />
+                                </form>
+                            </li>
+                        }
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li>
+                                <form method="post" asp-controller="Account" asp-action="Logout">
+                                    <input class="shapkaMainBut" type="submit" value="Выход" />
+                                </form>
+                            </li>
+                        }
+                        else
+                        {
+                            <li>
+                                <form method="post" asp-controller="Account" asp-action="Login">
+                                    <input class="shapkaMainBut" type="submit" value="Войти в личный кабинет" />
+                                </form>
+                            </li>
+                        }
+                    </ul>
         </div>
         </div>
         </nav>

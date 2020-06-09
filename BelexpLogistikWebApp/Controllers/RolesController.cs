@@ -54,7 +54,7 @@ namespace BelexpLogistikWebApp.Controllers
         }
 
         public IActionResult UserList() => View(_userManager.Users.ToList());
-
+        [HttpGet]
         public async Task<IActionResult> Edit(string userId)
         {
             // получаем пользователя

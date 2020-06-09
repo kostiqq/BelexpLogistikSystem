@@ -1,0 +1,36 @@
+﻿@model BelexpLogistikWebApp.Ride
+
+@{
+    ViewBag.Title = "Создание поездки";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Создание новой поездки</h2>
+
+<form asp-action="CreateRide">
+    <div class="form-group">
+        <label>Водитель</label>
+        <select asp-for="DriverId" class="form-control" asp-items="ViewBag.Drivers">
+        </select>
+        <span asp-validation-for="DriverId" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label>Машина</label>
+        <select asp-for="CarId" class="form-control" asp-items="ViewBag.Cars">
+        </select>
+        <span asp-validation-for="CarId" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label>Номер заказа</label>
+        <select asp-for="OrderId" class="form-control" asp-items="ViewBag.Orders">
+        </select>
+        <span asp-validation-for="OrderId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Создать" class="btn btn-default" />
+    </div>
+</form>
+<div>
+    @Html.ActionLink("Назад", "Index")
+</div>
