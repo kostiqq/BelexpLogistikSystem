@@ -11,17 +11,17 @@ namespace BelexpLogistikWebApp
             string adminEmail = "admin@gmail.com";
             string adminLogin = "admin";
             string password = "123123Qw!";
-            if (await roleManager.FindByNameAsync("admin") == null)
+            if (await roleManager.FindByNameAsync("Администратор") == null)
             {
-                await roleManager.CreateAsync(new IdentityRole("admin"));
+                await roleManager.CreateAsync(new IdentityRole("Администратор"));
             }
-            if (await roleManager.FindByNameAsync("logistician") == null)
+            if (await roleManager.FindByNameAsync("Логист") == null)
             {
-                await roleManager.CreateAsync(new IdentityRole("logistician"));
+                await roleManager.CreateAsync(new IdentityRole("Логист"));
             }
-            if (await roleManager.FindByNameAsync("driver") == null)
+            if (await roleManager.FindByNameAsync("Водитель") == null)
             {
-                await roleManager.CreateAsync(new IdentityRole("driver"));
+                await roleManager.CreateAsync(new IdentityRole("Водитель"));
             }
             if (await userManager.FindByNameAsync(adminEmail) == null)
             {
@@ -29,7 +29,7 @@ namespace BelexpLogistikWebApp
                 IdentityResult result = await userManager.CreateAsync(admin, password);
                 if (result.Succeeded)
                 {
-                    await userManager.AddToRoleAsync(admin, "admin");
+                    await userManager.AddToRoleAsync(admin, "Администратор");
                 }
             }
         }

@@ -4,11 +4,11 @@ namespace BelexpLogistikWebApp.Models
 {
     public class LoginViewModel
     {
-        [Required]
+        [Required(ErrorMessage = "Не указан логин")]
         [Display(Name = "Имя пользователя")]
         public string Email { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Не указан пароль")]
         [DataType(DataType.Password)]
         [Display(Name = "Пароль")]
         public string Password { get; set; }

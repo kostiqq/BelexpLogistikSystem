@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace BelexpLogistikWebApp
 {
@@ -15,8 +16,10 @@ namespace BelexpLogistikWebApp
         public string DriverSurname { get; set; }
         public string DriverName { get; set; }
         public string DriverPatronymic { get; set; }
+        [DataType(DataType.Date)]
         public DateTime? Birthday { get; set; }
         public string DriverCardId { get; set; }
+        [DataType(DataType.Date)]
         public DateTime? LastMedicalInspection { get; set; }
         public string Other { get; set; }
         public bool? IsFree { get; set; }
