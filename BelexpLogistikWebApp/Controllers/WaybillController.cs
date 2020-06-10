@@ -33,7 +33,7 @@ namespace BelexpLogistikWebApp.Controllers
             var waybill = waybills.Where(p => p.Id == id).FirstOrDefault(p => p.Id == id);
             return View(waybill);
         }
-        public IActionResult CreateList()
+        public IActionResult CreatePdf()
         {
             return new ViewAsPdf();
         }
