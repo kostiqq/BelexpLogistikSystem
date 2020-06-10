@@ -42,8 +42,8 @@ namespace BelexpLogistikWebApp.Controllers
         }
         public IActionResult DriverRides()
         {
-            
-            var rides = db.Ride.Include(p => p.Car).Include(p => p.Driver).Include(p => p.Order);
+            var user = User.Identity.Name;
+            var rides = db.Ride.Include(p => p.Car).Include(p => p.Driver).Include(p => p.Order).Where(p => p.Driver.Other == user);
             return View(rides);
         }
         [HttpGet]

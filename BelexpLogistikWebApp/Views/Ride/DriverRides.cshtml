@@ -19,7 +19,7 @@
                     Машина
                 </th>
             </tr>
-            @foreach (var ride in Model.Where(p => p.Driver.Other == "54").Where(p => p.IsComplete == false))
+            @foreach (var ride in Model.Where(p => p.IsComplete == false))
             {
                 <tr>
                     <td rowspan="2">

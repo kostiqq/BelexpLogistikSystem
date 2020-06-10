@@ -1,17 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.NodeServices;
 using Microsoft.EntityFrameworkCore;
+using Rotativa.AspNetCore;
+using Syncfusion.HtmlConverter;
+using Syncfusion.Pdf;
 
 namespace BelexpLogistikWebApp.Controllers
 {
     public class WaybillController : Controller
     {
+        private readonly IHostingEnvironment _hostingEnvironment;
         BelexpLogistikContext db;
-        public WaybillController(BelexpLogistikContext context)
+        public WaybillController(BelexpLogistikContext context, IHostingEnvironment hostingEnvironment)
         {
+            _hostingEnvironment = hostingEnvironment;
             db = context;
         }
         public IActionResult Index()
@@ -27,7 +35,8 @@ namespace BelexpLogistikWebApp.Controllers
         }
         public IActionResult CreateList()
         {
-            return View();
+            return new ViewAsPdf();
         }
+       
     }
 }

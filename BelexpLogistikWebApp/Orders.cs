@@ -11,7 +11,6 @@ namespace BelexpLogistikWebApp
         }
 
         public int Id { get; set; }
-        public int? UserId { get; set; }
         public string DepartureCity { get; set; }
         public string PhoneNumber { get; set; }
         public bool? IsComplete { get; set; }
@@ -22,7 +21,6 @@ namespace BelexpLogistikWebApp
         public double? GoodsWeight { get; set; }
         public string OtherInfo { get; set; }
 
-        public virtual Users User { get; set; }
         public virtual Waybill Waybill { get; set; }
         public virtual ICollection<Ride> Ride { get; set; }
     }

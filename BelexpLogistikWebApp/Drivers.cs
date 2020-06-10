@@ -20,10 +20,8 @@ namespace BelexpLogistikWebApp
         public DateTime? LastMedicalInspection { get; set; }
         public string Other { get; set; }
         public bool? IsFree { get; set; }
-        public int? UserId { get; set; }
         public int IdentificationNumber { get; set; }
 
-        public virtual Users User { get; set; }
         public virtual ICollection<Ride> Ride { get; set; }
         public virtual ICollection<Waybill> Waybill { get; set; }
     }

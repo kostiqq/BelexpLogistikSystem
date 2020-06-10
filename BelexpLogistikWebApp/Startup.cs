@@ -11,6 +11,7 @@ using Microsoft.Extensions.Hosting;
 using BelexpLogistikWebApp.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Rotativa.AspNetCore;
 
 namespace BelexpLogistikWebApp
 {
@@ -34,10 +35,12 @@ namespace BelexpLogistikWebApp
             services.AddIdentity<User, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationContext>();
             services.AddControllersWithViews();
+            services.AddNodeServices();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        [Obsolete]
+        public void Configure(IApplicationBuilder app, Microsoft.AspNetCore.Hosting.IHostingEnvironment env)
         {
             if (env.IsDevelopment())
             {
@@ -63,6 +66,7 @@ namespace BelexpLogistikWebApp
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+            RotativaConfiguration.Setup(env);
         }
     }
 }
