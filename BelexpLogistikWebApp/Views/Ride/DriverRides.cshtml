@@ -13,7 +13,10 @@
                     Номер заказа
                 </th>
                 <th>
-                    Водитель
+                    Город назначения
+                </th>
+                <th>
+                    Груз
                 </th>
                 <th>
                     Машина
@@ -26,7 +29,10 @@
                         @ride.Order.Id
                     </td>
                     <td>
-                        @ride.Driver.DriverSurname @ride.Driver.DriverName @ride.Driver.DriverPatronymic
+                        @ride.Order.DepartureCity
+                    </td>
+                    <td>
+                        @ride.Order.GoodsName
                     </td>
                     <td>
                         @ride.Car.CarModel @ride.Car.CarNumber
@@ -40,8 +46,5 @@
                 </tr>
             }
         </table>
-        <form method="get" asp-controller="Ride" asp-action="CreateRide">
-            <input class="shapkaMainBut" type="submit" value="Создать поездку" />
-        </form>
     </div>
 </body>

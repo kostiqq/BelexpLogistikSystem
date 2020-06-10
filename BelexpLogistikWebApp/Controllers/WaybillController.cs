@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.NodeServices;
 using Microsoft.EntityFrameworkCore;
 using Rotativa.AspNetCore;
@@ -37,6 +38,42 @@ namespace BelexpLogistikWebApp.Controllers
         {
             return new ViewAsPdf();
         }
-       
+        public IActionResult CreateList()
+        {
+            return View();
+        }
+        [HttpGet]
+        public ActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return HttpNotFound();
+            }
+            Waybill waybill = db.Waybill.Find(id);
+            if (waybill != null)
+            {
+                SelectList drivers = new SelectList(db.Drivers, "Id", "DriverSurname", waybill.DriverId);
+                ViewBag.DriverId = drivers;
+                SelectList cars = new SelectList(db.Cars, "Id", "CarModel", waybill.CarId);
+                ViewBag.CarId = cars;
+                SelectList trailers = new SelectList(db.Trailers, "Id", "TrailerModel", waybill.TrailersId);
+                ViewBag.TrailersId = trailers;
+                return View(waybill);
+            }
+            return RedirectToAction("Index");
+        }
+
+        private ActionResult HttpNotFound()
+        {
+            throw new NotImplementedException();
+        }
+
+        [HttpPost]
+        public ActionResult Edit(Waybill waybill)
+        {
+            db.Entry(waybill).State = EntityState.Modified;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

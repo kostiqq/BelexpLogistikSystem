@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 
 namespace BelexpLogistikWebApp.Controllers
@@ -51,6 +52,8 @@ namespace BelexpLogistikWebApp.Controllers
             Orders order = db.Orders.Find(id);
             if (order != null)
             {
+                SelectList waybills = new SelectList(db.Waybill, "Id", "WaybillSeries", order.WaybillId);
+                ViewBag.WaybillId = waybills;
                 return View(order);
             }
             return HttpNotFound();

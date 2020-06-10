@@ -1,5 +1,46 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model BelexpLogistikWebApp.Ride
+
 @{
+    ViewData["Title"] = "Info";
 }
+
+<h1>Информация по заказу №@Html.DisplayFor(model => model.Id)</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Дата прибытия
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ArrivalDate)
+        </dd>
+        <dt class="col-sm-2">
+            Машина
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Car.CarModel) @Html.DisplayFor(model => model.Car.CarNumber)
+        </dd>
+        <dt class="col-sm-2">
+            Заказ
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Order.Id)
+        </dd>
+        <dt class="col-sm-2">
+            Груз
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Order.GoodsName)
+        </dd>
+        <dt class="col-sm-2">
+            Прочая информация
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Order.OtherInfo)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Index">Назад</a>
+</div>
