@@ -2,6 +2,1191 @@
 @{
     ViewData["Title"] = "CreatePdf";
 }
+<link rel="stylesheet" href="~/css/StylePDF.css" />
+<style>
+    footer, header {
+        display: none;
+    }
 
-<h1>CreatePdf</h1>
 
+    table {
+        border-collapse: collapse;
+        /*transform: rotate(-90deg);*/
+    }
+
+    .underLineSpan {
+        text-decoration: underline;
+    }
+
+    .centerPList {
+        text-align: center;
+    }
+
+    .smallTextSpan {
+        font-size: smaller;
+        padding: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .rightSpanFixedShtamp {
+        float: left;
+        position: absolute;
+        margin-left: 50px;
+    }
+
+    .CodeTable tr td {
+        padding-top: 0;
+        padding-bottom: 0;
+        width: 100px;
+        text-align: center;
+        padding-left: 5px;
+        padding-right: 5px;
+        height: 15px;
+        border: 1px solid black;
+    }
+
+        .CodeTable tr td:nth-child(1) {
+            border: none;
+        }
+
+    .SpanWriteB {
+        font-weight: 600;
+    }
+
+    .CodeTable {
+        position: absolute;
+        float: right;
+        right: 200px;
+        border-collapse: collapse;
+    }
+
+    .workDriverAndCar {
+        border-collapse: collapse;
+        position: absolute;
+        float: right;
+        right: 173px;
+    }
+
+        .workDriverAndCar tr td {
+            border: 1px solid black;
+            font-size: smaller;
+            text-align: center;
+            height: 10px;
+        }
+
+    .SmallerTrTdDriversBig {
+        font-size: 0.9em;
+    }
+
+    .SmallerTrTdDrivers {
+        font-size: 0.8em;
+    }
+
+    .widthTdTable td:nth-child(1),
+    .widthTdTable td:nth-child(3),
+    .widthTdTable td:nth-child(4),
+    .widthTdTable td:nth-child(5) {
+        width: 40px;
+    }
+
+    .widthTdTable td:nth-child(2),
+    .widthTdTable td:nth-child(6) {
+        width: 80px;
+    }
+
+    .widthTdTable td:nth-child(7),
+    .widthTdTable td:nth-child(8),
+    .widthTdTable td:nth-child(9),
+    .widthTdTable td:nth-child(10) {
+        width: 45px;
+    }
+
+    .CarPricepPoly {
+        border-collapse: collapse;
+        position: absolute;
+        float: left;
+        left: 303px;
+        top: 116px;
+    }
+
+        .CarPricepPoly tr td {
+            border: 1px solid black;
+            font-size: smaller;
+            height: 15px;
+            width: 120px;
+        }
+
+    .CenterTextCar {
+        text-align: center;
+    }
+
+    .tableDrivers {
+        border-collapse: collapse;
+        position: absolute;
+        float: left;
+        left: 165px;
+        top: 266px;
+    }
+
+        .tableDrivers tr td {
+            border: 1px solid black;
+            font-size: smaller;
+            height: 10px;
+        }
+
+            .tableDrivers tr td:nth-child(1) {
+                width: 140px;
+            }
+
+            .tableDrivers tr td:nth-child(2) {
+                width: 70px;
+            }
+
+            .tableDrivers tr td:nth-child(3) {
+                width: 100px;
+            }
+
+            .tableDrivers tr td:nth-child(4) {
+                width: 190px;
+            }
+
+    .lecenzCard {
+        border-collapse: collapse;
+        position: absolute;
+        float: left;
+        left: 170px;
+        top: 136px;
+    }
+
+        .lecenzCard tr td {
+            padding: 0;
+        }
+
+    .TaskForDrivers {
+        border-collapse: collapse;
+        position: absolute;
+        left: 160px;
+        top: 425px;
+    }
+
+        .TaskForDrivers tr td {
+            border: 1px solid black;
+            height: 15px;
+        }
+
+            .TaskForDrivers tr td:nth-child(1),
+            .TaskForDrivers tr td:nth-child(2),
+            .TaskForDrivers tr td:nth-child(3),
+            .TaskForDrivers tr td:nth-child(5) {
+                width: 160px;
+            }
+
+            .TaskForDrivers tr td:nth-child(6),
+            .TaskForDrivers tr td:nth-child(4) {
+                width: 40px;
+            }
+
+            .TaskForDrivers tr td:nth-child(7) {
+                width: 74px;
+            }
+
+    .smallTextUnderTable {
+        position: absolute;
+        margin-top: 540px;
+        left: 160px;
+        margin-bottom: 400px;
+    }
+
+        .smallTextUnderTable tr td {
+            padding-right: 80px;
+        }
+
+    .vipolnTaskTable {
+        position: absolute;
+        margin-top: 620px;
+        left: 160px;
+        border-collapse: collapse;
+    }
+
+        .vipolnTaskTable tr td {
+            border: 1px solid black;
+            height: 16px;
+            width: 50px;
+        }
+
+            .vipolnTaskTable tr td:nth-child(6),
+            .vipolnTaskTable tr td:nth-child(11),
+            .vipolnTaskTable tr td:nth-child(12),
+            .vipolnTaskTable tr td:nth-child(13) {
+                width: 20px;
+            }
+
+            .vipolnTaskTable tr td:nth-child(5) {
+                width: 125px;
+            }
+
+    .ResultWorkAuto {
+        border-collapse: collapse;
+        position: absolute;
+        margin-top: 1019px;
+        left: 160px;
+        width: 1055px !important;
+    }
+
+        .ResultWorkAuto tr td {
+            border: 1px solid black;
+            width: 40px;
+        }
+
+    .heightTableEnd td {
+        height: 90px;
+    }
+
+    .tableMarginRight tr td:nth-child(2) {
+        padding-right: 60px;
+    }
+
+    .tableMarginRight {
+        border-collapse: collapse;
+        position: absolute;
+        margin-top: 1275px;
+        left: 160px;
+    }
+
+
+</style>
+
+
+<p>
+    <span class="smallTextSpan rightSpanFixedShtamp">Место для штампа<br>организации</span>
+</p>
+<p>
+    <table class="CodeTable">
+        <tr>
+            <td>
+            </td>
+            <td>
+                <span class="smallTextSpan">Коды</span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span class="smallTextSpan">Форма ОКУД</span>
+            </td>
+            <td>
+                <span class="smallTextSpan">3456</span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span class="smallTextSpan">по ОКПО</span>
+            </td>
+            <td>
+                <span class="smallTextSpan">4567543</span>
+            </td>
+        </tr>
+    </table>
+</p>
+<p class="centerPList">
+    ПУТЕВОЙ ЛИСТ <span class="underLineSpan SpanWriteB">123</span> № <span class="underLineSpan SpanWriteB">123</span><br>
+    <span class="smallTextSpan">
+        грузового автомобиля, выполняющего перевозки<br> в международном сообщении<br>
+    </span>
+    <span class="smallTextSpan">
+        Срок действия с "<span class="underLineSpan SpanWriteB">123</span>" <span class="underLineSpan SpanWriteB">ИЮНЯ</span> 20<span class="underLineSpan SpanWriteB">20</span>г. по "<span class="underLineSpan SpanWriteB">123</span>"
+        <span class="underLineSpan SpanWriteB">ИЮНЯ</span> 20<span class="underLineSpan SpanWriteB">20</span>г.
+    </span>
+</p>
+<p>
+    <table class="lecenzCard">
+        <tr class="SmallerTrTdDrivers">
+            <td>Лицензионная карточка</td>
+        </tr>
+        <tr>
+            <td>№<span class="SmallerTrTdDrivers underLineSpan SpanWriteB">132123</span></td>
+        </tr>
+        <tr class="SmallerTrTdDrivers CenterTextCar">
+            <td>Разрешение</td>
+        </tr>
+        <tr class="SmallerTrTdDrivers">
+            <td>№___от"__" _____</td>
+        </tr>
+        <tr class="SmallerTrTdDrivers">
+            <td>№___от"__" _____</td>
+        </tr>
+        <tr class="SmallerTrTdDrivers">
+            <td>№___от"__" _____</td>
+        </tr>
+        <tr class="SmallerTrTdDrivers">
+            <td>№___от"__" _____</td>
+        </tr>
+
+    </table>
+    <table class="CarPricepPoly">
+        <tr class="CenterTextCar SpanWriteB">
+            <td colspan="3">Автомобиль, прицеп, полуприцеп</td>
+        </tr>
+        <tr class="SmallerTrTdDrivers CenterTextCar">
+            <td>
+                Марка автомобиля, прицепа,<br> полуприцепа
+            </td>
+            <td>
+                Гаражный номер
+            </td>
+            <td>Государственный номер</td>
+        </tr>
+        <tr class="CenterTextCar">
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr class="SpanWriteB">
+            <td>Мазда</td>
+            <td></td>
+            <td>2754-ФВ</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr class="SpanWriteB">
+            <td>Прицеп</td>
+            <td></td>
+            <td>
+                2134-РБ
+            </td>
+        </tr>
+    </table>
+    <table class="tableDrivers">
+        <tr class="CenterTextCar SpanWriteB">
+            <td colspan="4">Водитель</td>
+        </tr>
+        <tr class="SmallerTrTdDrivers CenterTextCar">
+            <td>
+                Фамилия, имя, отчество
+            </td>
+            <td>
+                Табельный номер
+            </td>
+            <td>
+                Номер водительского удостоверения
+
+            </td>
+            <td>
+                Водитель по состоянию здоровья к управлению автомобилем допущен. Подпись (штамп) врача
+
+            </td>
+        </tr>
+        <tr class="CenterTextCar">
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+            <td>7</td>
+        </tr>
+        <tr class="SpanWriteB SmallerTrTdDriversBig">
+            <td>Романишко</td>
+            <td></td>
+            <td>2847РБ</td>
+            <td></td>
+        </tr>
+        <tr class="SpanWriteB SmallerTrTdDriversBig">
+            <td>Константин</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr class="SpanWriteB SmallerTrTdDriversBig">
+            <td>Сергеевич</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+</p>
+<p>
+    <table class="workDriverAndCar">
+        <tr class="SpanWriteB">
+            <td colspan="10">
+                Работа водителя и автомобиля
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2" rowspan="2">
+                Операция
+            </td>
+            <td colspan="3" rowspan="2">
+                Показания спидометра
+
+            </td>
+            <td colspan="5">
+                Дата (число, мес.), время(час, мин.)
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">по графику</td>
+            <td colspan="3">фактически</td>
+        </tr>
+        <tr>
+            <td colspan="2">8</td>
+            <td colspan="3">9</td>
+            <td colspan="2">10</td>
+            <td colspan="3">11</td>
+        </tr>
+        <tr class="SmallerTrTdDriversBig">
+            <td colspan="2">Выезд на линию</td>
+            <td colspan="3"></td>
+            <td colspan="2"></td>
+            <td colspan="3"></td>
+        </tr>
+        <tr class="SmallerTrTdDriversBig">
+            <td colspan="2">Возвращение с линии</td>
+            <td colspan="3"></td>
+            <td colspan="2"></td>
+            <td colspan="3"></td>
+        </tr>
+        <tr class="SpanWriteB">
+            <td colspan="10">
+                Движение топливно-смазочных материалов (ТСМ)
+            </td>
+        </tr>
+        <tr class="SmallerTrTdDrivers">
+            <td colspan="6">Заправка ТСМ</td>
+            <td colspan="2">Остаток топлива,л.</td>
+            <td colspan="2">Время работы, час</td>
+        </tr>
+        <tr class="SmallerTrTdDrivers widthTdTable">
+            <td>дата (число ,месяц)</td>
+            <td>пункт<br>заправки</td>
+            <td>марка ТСМ</td>
+            <td>код марки</td>
+            <td>кол-во л(кг)</td>
+            <td>подпись<br>заправщика<br>(№ чека АЗС)</td>
+            <td>при выезде</td>
+            <td>при возвра-<br>щении</td>
+            <td>двига<br>теля</td>
+            <td>спец-<br>оборудо-<br>вания</td>
+
+        </tr>
+        <tr class="SmallerTrTdDrivers">
+            <td>12</td>
+            <td>13</td>
+            <td>14</td>
+            <td>15</td>
+            <td>16</td>
+            <td>17</td>
+            <td>18</td>
+            <td>19</td>
+            <td>20</td>
+            <td>21</td>
+        </tr>
+        <tr class="SmallerTrTdDrivers">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr class="SmallerTrTdDrivers">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td colspan="4">Подписи</td>
+        </tr>
+        <tr class="SmallerTrTdDrivers">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>механик</td>
+            <td>механик</td>
+            <td colspan="2">диспетчер</td>
+
+        </tr>
+        <tr class="SmallerTrTdDrivers">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr class="SmallerTrTdDrivers">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td colspan="4">Топливо на кругорейс, л </td>
+
+        </tr>
+        <tr class="SmallerTrTdDrivers">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td colspan="4">22</td>
+
+        </tr>
+
+        <tr class="SmallerTrTdDrivers">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+</p>
+<p>
+    <table class="TaskForDrivers">
+        <tr class="SpanWriteB CenterTextCar">
+            <td colspan="7">Задание водителю</td>
+        </tr>
+        <tr class="SmallerTrTdDrivers CenterTextCar">
+            <td rowspan="2">
+                Заказчик
+            </td>
+            <td colspan="2">
+                Маршрут следования
+            </td>
+            <td rowspan="2">
+                Расстояние, км
+            </td>
+            <td rowspan="2">
+                Наименование груза
+            </td>
+            <td rowspan="2">
+                Вес груза, т
+            </td>
+            <td rowspan="2">
+                Дата прибытия в пункт назначения
+            </td>
+        </tr>
+        <tr class="SmallerTrTdDrivers CenterTextCar">
+            <td>пункт отправления (страна, город)</td>
+            <td>
+                пункт назначения (страна, город)
+            </td>
+        </tr>
+        <tr class="SmallerTrTdDrivers CenterTextCar">
+            <td>23</td>
+            <td>24</td>
+            <td>25</td>
+            <td>26</td>
+            <td>27</td>
+            <td>28</td>
+            <td>29</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+
+    </table>
+</p>
+<p>
+
+    <table class="smallTextUnderTable">
+        <tr>
+            <td colspan="3">
+                <span class="SmallerTrTdDriversBig">
+                    Опоздания, простои в пути и прочие отметки____________________________________________________________________________________________________________________________________________________<br>
+                    ____________________________________________________________________________________________________________________________________________________________________________________________________________<br>
+                    ____________________________________________________________________________________________________________________________________________________________________________________________________________
+                </span>
+            </td>
+        </tr>
+        <tr class="SmallerTrTdDrivers">
+            <td>
+                Водительское удостоверение проверил, задание выдал.<br><br> Выдать топлива______л.<br> Подпись (штамп) диспетчера
+            </td>
+            <td>
+
+                Автомобиль технически исправен. Выезд разрешен. <br> Подпись (штамп) механика <br> Автомобиль в технически исправном состоянии принял <br> Подпись водителя
+
+            </td>
+            <td>
+                Автомобиль сдал <br> Подпись водителя <br> Автомобиль принял <br> Подпись (штамп) механика
+            </td>
+        </tr>
+    </table>
+</p>
+<br><br><br><br><br><br><br><br><br><br><br>
+<br>
+<p>
+    <table class="vipolnTaskTable">
+        <tr class="SpanWriteB CenterTextCar">
+            <td colspan="15">
+                Выполнение задания
+            </td>
+        </tr>
+        <tr class="SmallerTrTdDrivers CenterTextCar">
+            <td colspan="11">
+                Заполняется водителем на основании международной товарно-транспортной накладной (CMR)
+            </td>
+            <td colspan="4">
+                Заполняется перевозчиком
+
+            </td>
+        </tr>
+        <tr class="SmallerTrTdDrivers CenterTextCar">
+            <td rowspan="2">
+                Заказчик
+            </td>
+            <td rowspan="2">
+                Дата
+            </td>
+            <td rowspan="2">
+                Ф., И., О., (табельный номер водителя)
+
+            </td>
+            <td rowspan="2">
+                Гос. номер (гаражный номер) прицепа (полуприцепа)
+            </td>
+            <td colspan="3">
+                Груз
+            </td>
+            <td rowspan="2">
+                № и дата CMR
+            </td>
+            <td colspan="3">
+                Движение по участкам маршрута
+            </td>
+            <td colspan="2">
+                Пробег, км
+            </td>
+            <td rowspan="2">
+                Транспортная работа, км
+            </td>
+            <td rowspan="2">
+                Коэффициент изменения нормы расхода топлива
+            </td>
+        </tr>
+        <tr class="SmallerTrTdDrivers CenterTextCar">
+            <td>Наименование</td>
+            <td>код<br>груза</td>
+            <td>вес, т</td>
+            <td>страна</td>
+            <td>начальный<br>пункт</td>
+            <td>конечный пункт</td>
+            <td>груженый</td>
+            <td>порожний</td>
+
+        </tr>
+        <tr class="SmallerTrTdDrivers CenterTextCar">
+            <td>30</td>
+            <td>31</td>
+            <td>32</td>
+            <td>33</td>
+            <td>34</td>
+            <td>35</td>
+            <td>36</td>
+            <td>37</td>
+            <td>38</td>
+            <td>39</td>
+            <td>40</td>
+            <td>41</td>
+            <td>42</td>
+            <td>43</td>
+            <td>44</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+
+
+    </table>
+    <table class="ResultWorkAuto">
+        <tr class="SpanWriteB CenterTextCar">
+            <td colspan="26">
+                Результаты работы автопоезда (заполняется перевозчиком)
+            </td>
+        </tr>
+        <tr class="SmallerTrTdDrivers CenterTextCar">
+            <td colspan="3">Расход топлива, л</td>
+            <td colspan="4">Время в наряде, час</td>
+            <td colspan="5">Побег, км</td>
+            <td colspan="5">Перевезено, т</td>
+            <td colspan="5">Выполнено, ткм</td>
+            <td rowspan="4">Количество ездок</td>
+            <td rowspan="4">Автомобиле-дни в работе</td>
+            <td rowspan="2" colspan="2">Работа с полуприцепами (прицепами)</td>
+
+        </tr>
+        <tr class="SmallerTrTdDrivers CenterTextCar">
+            <td rowspan="3">марка<br>топ-<br>лива</td>
+            <td rowspan="3">по<br>нор-<br>ме</td>
+            <td rowspan="3">фак-<br>тичес<br>ки</td>
+            <td rowspan="3">всего</td>
+            <td colspan="3">В том числе</td>
+            <td rowspan="3">всего</td>
+            <td colspan="3">В том числе</td>
+            <td rowspan="3">с грузом</td>
+            <td rowspan="3">всего</td>
+            <td colspan="3">В том числе</td>
+            <td rowspan="3">на прицепах</td>
+            <td rowspan="3">всего</td>
+            <td colspan="3">В том числе</td>
+            <td rowspan="3">на<br>при-<br>цепах</td>
+
+
+
+        </tr>
+        <tr class="SmallerTrTdDrivers CenterTextCar">
+            <td rowspan="2">в дви-<br>жении</td>
+            <td colspan="2">в простоте</td>
+            <td rowspan="2">РБ</td>
+            <td rowspan="2">иностр. госуд.</td>
+
+            <td rowspan="2">тран-<br>зитом</td>
+            <td rowspan="2">из РБ</td>
+            <td rowspan="2">в РБ</td>
+            <td rowspan="2">тран-<br>зитом</td>
+            <td rowspan="2">из РБ</td>
+            <td rowspan="2">в РБ</td>
+            <td rowspan="2">тран-<br>зитом</td>
+
+            <td rowspan="2">Гаражный номер</td>
+            <td rowspan="2">пробег,км</td>
+
+        </tr>
+        <tr class="SmallerTrTdDrivers CenterTextCar">
+            <td>
+                под погр. разгр
+            </td>
+            <td>
+                прочее
+            </td>
+        </tr>
+        <tr class="SmallerTrTdDrivers CenterTextCar">
+            <td>
+                45
+            </td>
+            <td>
+                46
+            </td>
+            <td>
+                47
+            </td>
+            <td>
+                48
+            </td>
+            <td>
+                49
+            </td>
+            <td>
+                50
+            </td>
+            <td>
+                51
+            </td>
+            <td>
+                52
+            </td>
+            <td>
+                53
+            </td>
+            <td>
+                54
+            </td>
+            <td>
+                55
+            </td>
+            <td>
+                56
+            </td>
+            <td>
+                57
+            </td>
+            <td>
+                58
+            </td>
+            <td>
+                59
+            </td>
+            <td>
+                60
+            </td>
+            <td>
+                61
+            </td>
+            <td>
+                62
+            </td>
+            <td>
+                63
+            </td>
+            <td>
+                64
+            </td>
+            <td>
+                65
+            </td>
+            <td>
+                66
+            </td>
+            <td>
+                67
+            </td>
+            <td>
+                68
+            </td>
+            <td>
+                69
+            </td>
+            <td>
+                70
+            </td>
+
+        </tr>
+        <tr class="heightTableEnd">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+
+        </tr>
+    </table>
+    <table class="tableUnderEnd tableMarginRight">
+        <tr>
+            <td colspan="4">
+
+                <span class="SmallerTrTdDriversBig">
+                    Опоздания, простои в пути и прочие отметки____________________________________________________________________________________________________________________________________________________<br>
+                    ____________________________________________________________________________________________________________________________________________________________________________________________________________<br>
+                    ____________________________________________________________________________________________________________________________________________________________________________________________________________
+
+                </span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span class="SmallerTrTdDrivers">Водитель</span>
+            </td>
+            <td>
+                <span class="SmallerTrTdDrivers">Диспетчер</span>
+
+            </td>
+            <td>
+                <span class="SmallerTrTdDrivers">Техник по учету ТСМ</span>
+
+            </td>
+            <td>
+                <span class="SmallerTrTdDrivers">Инженер</span>
+
+            </td>
+        </tr>
+    </table>
+</p>

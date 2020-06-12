@@ -8,7 +8,7 @@
 <link href="~/css/adminmainpage.css" rel="stylesheet" type="text/css">
 <style>
 </style>
-<body>
+@*<body>*@
 
     @if (User.Identity.IsAuthenticated)
     {
@@ -49,16 +49,16 @@
     }
     else
     {
-        <div class="htmlMainStrDiv">
+        //<div class="htmlMainStrDiv">
             <img src="https://beleks.ibiz.by/images/company/27279/header.jpg" class="backDivMainIMG" />
-            <div class="backgrDivMainFoot">
-                <span class="belexwhitemain">ГРУППА КОМПАНИЙ</span><br>
-                <span class="belexbluemain">БЕЛЭКС</span><br />
+           // <div class="backgrDivMainFoot">
+                <span class="belexwhitemain">ГРУППА КОМПАНИЙ<br></span>
+                <span class="belexbluemain">БЕЛЭКС<br></span>
                 <span class="belexblueminmain">
-                    НАДЁЖНОСТЬ И ПРОФЕССИОНАЛИЗМ В ДЕЙСТВИИ<br>
+                    НАДЁЖНОСТЬ И ПРОФЕССИОНАЛИЗМ В ДЕЙСТВИИ<br />
                     ДОВЕРЯЯ НАМ - ВЫ ДЕЛАЕТЕ РАЗУМНЫЙ ВЫБОР
                 </span>
-            </div>
-        </div>
+         //   </div>
+       // </div>
     }
-</body>
+@*</body>*@

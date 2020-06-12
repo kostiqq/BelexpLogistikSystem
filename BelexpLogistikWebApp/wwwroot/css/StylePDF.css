@@ -1,0 +1,152 @@
+﻿table {
+    border-collapse: collapse;
+    /*transform: rotate(-90deg);*/
+}
+
+.underLineSpan {
+    text-decoration: underline;
+}
+
+.centerPList {
+    text-align: center;
+}
+
+.smallTextSpan {
+    font-size: smaller;
+    padding: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.rightSpanFixedShtamp {
+    float: left;
+    position: fixed;
+    margin-left: 10px;
+    padding: none;
+}
+
+.CodeTable tr td {
+    padding-top: 0;
+    padding-bottom: 0;
+    width: 100px;
+    text-align: center;
+    padding-left: 5px;
+    padding-right: 5px;
+    height: 15px;
+    border: 1px solid black;
+}
+
+    .CodeTable tr td:nth-child(1) {
+        border: none;
+    }
+
+.SpanWriteB {
+    font-weight: 600;
+}
+
+.CodeTable {
+    position: fixed;
+    float: right;
+    right: 20px;
+    border-collapse: collapse;
+}
+
+.workDriverAndCar {
+    border-collapse: collapse;
+    position: fixed;
+    float: right;
+    right: 20px;
+}
+
+    .workDriverAndCar tr td {
+        border: 1px solid black;
+        font-size: smaller;
+        text-align: center;
+        height: 10px;
+    }
+
+.SmallerTrTdDriversBig {
+    font-size: 0.9em;
+}
+
+.SmallerTrTdDrivers {
+    font-size: 0.8em;
+}
+
+.widthTdTable td:nth-child(1),
+.widthTdTable td:nth-child(3),
+.widthTdTable td:nth-child(4),
+.widthTdTable td:nth-child(5) {
+    width: 40px;
+}
+
+.widthTdTable td:nth-child(2),
+.widthTdTable td:nth-child(6) {
+    width: 80px;
+}
+
+.widthTdTable td:nth-child(7),
+.widthTdTable td:nth-child(8),
+.widthTdTable td:nth-child(9),
+.widthTdTable td:nth-child(10) {
+    width: 45px;
+}
+
+.CarPricepPoly {
+    border-collapse: collapse;
+    position: fixed;
+    float: left;
+    left: 335px;
+}
+
+    .CarPricepPoly tr td {
+        border: 1px solid black;
+        font-size: smaller;
+        height: 15px;
+        width: 150px;
+    }
+
+.CenterTextCar {
+    text-align: center;
+}
+
+.tableDrivers {
+    border-collapse: collapse;
+    position: fixed;
+    float: left;
+    left: 20px;
+    top: 223px;
+}
+
+    .tableDrivers tr td {
+        border: 1px solid black;
+        font-size: smaller;
+        height: 10px;
+    }
+
+        .tableDrivers tr td:nth-child(1) {
+            width: 150px;
+        }
+
+        .tableDrivers tr td:nth-child(2) {
+            width: 70px;
+        }
+
+        .tableDrivers tr td:nth-child(3) {
+            width: 100px;
+        }
+
+        .tableDrivers tr td:nth-child(4) {
+            width: 190px;
+        }
+
+.lecenzCard {
+    border-collapse: collapse;
+    position: fixed;
+    float: left;
+    left: 20px;
+}
+
+    .lecenzCard tr td {
+        padding: 0;
+    }

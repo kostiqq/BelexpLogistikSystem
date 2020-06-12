@@ -36,7 +36,26 @@ namespace BelexpLogistikWebApp.Controllers
         }
         public IActionResult CreatePdf()
         {
-            return new ViewAsPdf();
+            //HtmlToPdfConverter converter = new HtmlToPdfConverter();
+            //WebKitConverterSettings settings = new WebKitConverterSettings();
+
+            //settings.WebKitPath = Path.Combine(_hostingEnvironment.ContentRootPath, "QtBinariesWindows");
+            //converter.ConverterSettings = settings;
+            //PdfDocument document = converter.Convert("http://localhost/Waybill/CreatePdf");
+
+            //MemoryStream ms = new MemoryStream();
+            //document.Save(ms);
+            //document.Close(true);
+
+            //ms.Position = 0;
+            //FileStreamResult fileStreamResult = new FileStreamResult(ms, "application/pdf");
+            //fileStreamResult.FileDownloadName = "CreatePdf.pdf";
+
+            //return fileStreamResult;
+            return new ViewAsPdf()
+            {
+                PageOrientation = Rotativa.AspNetCore.Options.Orientation.Landscape
+            };
         }
         public IActionResult CreateList()
         {
